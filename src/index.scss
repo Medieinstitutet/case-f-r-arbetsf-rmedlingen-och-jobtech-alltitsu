@@ -1,5 +1,8 @@
+@import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/digi-arbetsformedlingen.css';
+$font-path: "~node_modules/@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/assets/fonts/" !default; @import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.scss';
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: $font-path;
   line-height: 1.5;
   font-weight: 400;
 
