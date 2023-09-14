@@ -19,10 +19,12 @@ Vi gör issues som vi gör egna grenar av
 
 #5 Commits
 Små commits, vi lägger en PR på allt vi gör
+Reviews görs av minst en och den personen mergar sen
 Skriver på engelska
 Gitmoji är ok
 
 Underskrivet av
 @arnetzlinder
 @alengusinac
+@tittiet
 
