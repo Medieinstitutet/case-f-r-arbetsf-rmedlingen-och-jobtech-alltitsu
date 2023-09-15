@@ -8,7 +8,6 @@ export const HeaderWrapper = styled.header`
   padding: 0 20px;
   background-color: #c2efeb;
 `;
-import styled from 'styled-components';
 
 export const JobWrapper = styled.div`
   background-color: #6ea4bf;
