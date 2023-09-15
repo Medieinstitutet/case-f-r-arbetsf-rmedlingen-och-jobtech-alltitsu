@@ -12,6 +12,7 @@ import {
   NavigationVerticalMenuVariation,
 } from '@digi/arbetsformedlingen';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +20,9 @@ export const Header = () => {
   return (
     <>
       <HeaderWrapper>
-        <img src={logo} alt="Alltisu logo." width={100} height={100} />
+        <Link to="/">
+          <img src={logo} alt="Alltisu logo." width={100} height={100} />
+        </Link>
         <DigiNavigationSidebarButton afText="Meny" onClick={() => setMenuOpen(!menuOpen)}>
           <DigiNavigationSidebar
             afActive={menuOpen}
@@ -33,25 +36,28 @@ export const Header = () => {
             <DigiNavigationVerticalMenu afVariation={NavigationVerticalMenuVariation.PRIMARY}>
               <ul>
                 <li>
-                  <DigiNavigationVerticalMenuItem
-                    afText="Home"
-                    afActive={true}
-                    af-href={'/'}
-                  ></DigiNavigationVerticalMenuItem>
+                  <Link to="/">
+                    <DigiNavigationVerticalMenuItem
+                      afText="Home"
+                      afActive={true}
+                    ></DigiNavigationVerticalMenuItem>
+                  </Link>
                 </li>
                 <li>
-                  <DigiNavigationVerticalMenuItem
-                    afText="Search"
-                    afActive={true}
-                    af-href={'/search'}
-                  ></DigiNavigationVerticalMenuItem>
+                  <Link to="/search">
+                    <DigiNavigationVerticalMenuItem
+                      afText="Search"
+                      afActive={true}
+                    ></DigiNavigationVerticalMenuItem>
+                  </Link>
                 </li>
                 <li>
-                  <DigiNavigationVerticalMenuItem
-                    afText="Contact"
-                    afActive={true}
-                    af-href={'/contact'}
-                  ></DigiNavigationVerticalMenuItem>
+                  <Link to="/contact">
+                    <DigiNavigationVerticalMenuItem
+                      afText="Contact"
+                      afActive={true}
+                    ></DigiNavigationVerticalMenuItem>
+                  </Link>
                 </li>
               </ul>
             </DigiNavigationVerticalMenu>
