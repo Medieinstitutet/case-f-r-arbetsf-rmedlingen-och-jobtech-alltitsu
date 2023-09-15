@@ -30,7 +30,7 @@ export const Header = () => {
             afBackdrop={true}
             afPosition={NavigationSidebarPosition.END}
             afVariation={NavigationSidebarVariation.OVER}
-            afCloseButtonText="Close"
+            afCloseButtonText="Stäng"
             onAfOnClose={() => setMenuOpen(!menuOpen)}
           >
             <DigiNavigationVerticalMenu afVariation={NavigationVerticalMenuVariation.PRIMARY}>
@@ -38,7 +38,7 @@ export const Header = () => {
                 <li>
                   <Link to="/">
                     <DigiNavigationVerticalMenuItem
-                      afText="Home"
+                      afText="Hem"
                       afActive={true}
                     ></DigiNavigationVerticalMenuItem>
                   </Link>
@@ -46,7 +46,7 @@ export const Header = () => {
                 <li>
                   <Link to="/search">
                     <DigiNavigationVerticalMenuItem
-                      afText="Search"
+                      afText="Sök"
                       afActive={true}
                     ></DigiNavigationVerticalMenuItem>
                   </Link>
@@ -54,7 +54,7 @@ export const Header = () => {
                 <li>
                   <Link to="/contact">
                     <DigiNavigationVerticalMenuItem
-                      afText="Contact"
+                      afText="Kontakt"
                       afActive={true}
                     ></DigiNavigationVerticalMenuItem>
                   </Link>
