@@ -13,28 +13,27 @@ export const HomePage = () => {
       <h2>Varför Alltitsu?</h2>
       <p>
         På Alltitsu förstår vi vikten av datadrivna beslut i dagens konkurrensutsatta arbetsmarknad.
-        Vår plattform ger dig möjlighet att:
-        <ul>
-          <li>
-            <span>Utforska Historiska Trender: </span>
-            Dyk djupt in i arbetsmarknadens förflutna för att förstå hur den har utvecklats över
-            tid.
-          </li>
-          <li>
-            <span>Analysera Branschförändringar: </span>
-            Identifiera nya branscher och trender för att fatta informerade karriärval.
-          </li>
-          <li>
-            <span>Optimera Jobbsökningar: </span>
-            Förbättra din strategi för jobbsökning baserat på datadrivna insikter.
-          </li>
-          <li>
-            <span>Förbättra Arbetskraftsplanering:</span>
-            Hjälp företag att fatta beslut baserade på data när det gäller talanganskaffning och
-            resursfördelning.
-          </li>
-        </ul>
+        Vår plattform ger dig möjlighet att
       </p>
+      <ul>
+        <li>
+          <span>Utforska Historiska Trender: </span>
+          Dyk djupt in i arbetsmarknadens förflutna för att förstå hur den har utvecklats över tid.
+        </li>
+        <li>
+          <span>Analysera Branschförändringar: </span>
+          Identifiera nya branscher och trender för att fatta informerade karriärval.
+        </li>
+        <li>
+          <span>Optimera Jobbsökningar: </span>
+          Förbättra din strategi för jobbsökning baserat på datadrivna insikter.
+        </li>
+        <li>
+          <span>Förbättra Arbetskraftsplanering:</span>
+          Hjälp företag att fatta beslut baserade på data när det gäller talanganskaffning och
+          resursfördelning.
+        </li>
+      </ul>
       <h2> Hur fungerar Alltitsu?</h2>
       <p>
         {' '}
