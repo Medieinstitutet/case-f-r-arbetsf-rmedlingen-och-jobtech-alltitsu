@@ -1,0 +1,20 @@
+@import "../colorvariables.scss";
+@import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/digi-arbetsformedlingen.css';
+
+.searchForm {
+    display: flex;
+    color: $DarkColor;
+    input {
+        width:20rem;
+        height: 2rem;
+        box-shadow:1px 1px $DarkColor ;
+        border-radius: 5px;
+        background-color: $FirstColor;
+        border: 1px solid $DarkColor;
+    }
+    label {
+        align-self: flex-start;
+        margin-right: 1rem;
+    }
+}
+
