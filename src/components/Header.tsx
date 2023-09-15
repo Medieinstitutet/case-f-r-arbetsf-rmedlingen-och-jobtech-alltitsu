@@ -20,42 +20,43 @@ export const Header = () => {
     <>
       <HeaderWrapper>
         <img src={logo} alt="Alltisu logo." width={100} height={100} />
-        <DigiNavigationSidebarButton afText="Meny" onClick={() => setMenuOpen(!menuOpen)} />
-        <DigiNavigationSidebar
-          afActive={menuOpen}
-          afStickyHeader={true}
-          afBackdrop={true}
-          afPosition={NavigationSidebarPosition.END}
-          afVariation={NavigationSidebarVariation.OVER}
-          afCloseButtonText="Close"
-          onAfOnClose={() => setMenuOpen(!menuOpen)}
-        >
-          <DigiNavigationVerticalMenu afVariation={NavigationVerticalMenuVariation.PRIMARY}>
-            <ul>
-              <li>
-                <DigiNavigationVerticalMenuItem
-                  afText="Home"
-                  afActive={true}
-                  af-href={'/'}
-                ></DigiNavigationVerticalMenuItem>
-              </li>
-              <li>
-                <DigiNavigationVerticalMenuItem
-                  afText="Search"
-                  afActive={true}
-                  af-href={'/search'}
-                ></DigiNavigationVerticalMenuItem>
-              </li>
-              <li>
-                <DigiNavigationVerticalMenuItem
-                  afText="Contact"
-                  afActive={true}
-                  af-href={'/contact'}
-                ></DigiNavigationVerticalMenuItem>
-              </li>
-            </ul>
-          </DigiNavigationVerticalMenu>
-        </DigiNavigationSidebar>
+        <DigiNavigationSidebarButton afText="Meny" onClick={() => setMenuOpen(!menuOpen)}>
+          <DigiNavigationSidebar
+            afActive={menuOpen}
+            afStickyHeader={true}
+            afBackdrop={true}
+            afPosition={NavigationSidebarPosition.END}
+            afVariation={NavigationSidebarVariation.OVER}
+            afCloseButtonText="Close"
+            onAfOnClose={() => setMenuOpen(!menuOpen)}
+          >
+            <DigiNavigationVerticalMenu afVariation={NavigationVerticalMenuVariation.PRIMARY}>
+              <ul>
+                <li>
+                  <DigiNavigationVerticalMenuItem
+                    afText="Home"
+                    afActive={true}
+                    af-href={'/'}
+                  ></DigiNavigationVerticalMenuItem>
+                </li>
+                <li>
+                  <DigiNavigationVerticalMenuItem
+                    afText="Search"
+                    afActive={true}
+                    af-href={'/search'}
+                  ></DigiNavigationVerticalMenuItem>
+                </li>
+                <li>
+                  <DigiNavigationVerticalMenuItem
+                    afText="Contact"
+                    afActive={true}
+                    af-href={'/contact'}
+                  ></DigiNavigationVerticalMenuItem>
+                </li>
+              </ul>
+            </DigiNavigationVerticalMenu>
+          </DigiNavigationSidebar>
+        </DigiNavigationSidebarButton>
       </HeaderWrapper>
     </>
   );
