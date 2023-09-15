@@ -25,15 +25,24 @@
         margin-left: 1rem;
     }
 
-    button {
-        background-color: $LightColor;
-        color: $ThirdColor;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width:20rem;
+   
+}
 
-    }
+.searchButtonDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchButton {
+    background-color: $LightColor;
+    color: $ThirdColor;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:10rem;
+    height: 3rem;
+
 }
 
 }

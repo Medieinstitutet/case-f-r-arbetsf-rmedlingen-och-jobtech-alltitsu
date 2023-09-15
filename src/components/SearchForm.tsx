@@ -56,8 +56,8 @@ export function SearchForm() {
             onChange={handleCompanyChange}
           />
         </div>
-        <div className='searchButton'>
-          <button type="submit">Sök</button>
+        <div className='searchButtonDiv'>
+          <button className='searchButton' type="submit">Sök</button>
         </div>
       </form>
     </div>
