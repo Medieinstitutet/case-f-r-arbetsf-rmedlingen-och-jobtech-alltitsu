@@ -1,8 +1,6 @@
 import React, { useState, FormEvent } from 'react';
 import "./SearchForm.scss"
 import "../colorvariables.scss"
-import { DigiButton } from '@digi/arbetsformedlingen-react';
-import { ButtonSize, ButtonVariation } from '@digi/arbetsformedlingen';
 
 export function SearchForm() {
   const [fromDate, setFromDate] = useState('');
@@ -31,7 +29,7 @@ export function SearchForm() {
   return (
     <div className='searchForm'>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="formField">
           <label htmlFor="fromDate">Från:</label>
           <input
             type="date"
@@ -40,7 +38,7 @@ export function SearchForm() {
             onChange={handleFromDateChange}
           />
         </div>
-        <div>
+        <div className="formField">
           <label htmlFor="toDate">Till:</label>
           <input
             type="date"
@@ -49,7 +47,7 @@ export function SearchForm() {
             onChange={handleToDateChange}
           />
         </div>
-        <div>
+        <div className="formField">
           <label htmlFor="company">Företag:</label>
           <input
             type="text"
@@ -58,11 +56,8 @@ export function SearchForm() {
             onChange={handleCompanyChange}
           />
         </div>
-        <div>
-        <DigiButton	
-        afSize={ButtonSize.MEDIUM}	
-        afVariation={ButtonVariation.PRIMARY}	
-        afFullWidth={false}>Sök</DigiButton>
+        <div className='searchButton'>
+          <button type="submit">Sök</button>
         </div>
       </form>
     </div>
