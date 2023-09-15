@@ -1,5 +1,7 @@
+
 import "./HomePage.scss"
 import "../colorvariables.scss"
+ import { JobCard } from './JobCard';
 
 export const HomePage = () => {
   return <div>
