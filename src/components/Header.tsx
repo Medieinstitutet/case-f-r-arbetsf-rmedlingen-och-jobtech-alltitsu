@@ -1,0 +1,69 @@
+import {
+  DigiNavigationSidebar,
+  DigiNavigationSidebarButton,
+  DigiNavigationVerticalMenu,
+  DigiNavigationVerticalMenuItem,
+} from '@digi/arbetsformedlingen-react';
+import logo from '../assets/logo.png';
+import { HeaderWrapper } from './styled/Wrappers';
+import {
+  NavigationSidebarPosition,
+  NavigationSidebarVariation,
+  NavigationVerticalMenuVariation,
+} from '@digi/arbetsformedlingen';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+export const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+    <>
+      <HeaderWrapper>
+        <Link to="/">
+          <img src={logo} alt="Alltisu logo." width={100} height={100} />
+        </Link>
+        <DigiNavigationSidebarButton afText="Meny" onClick={() => setMenuOpen(!menuOpen)}>
+          <DigiNavigationSidebar
+            afActive={menuOpen}
+            afStickyHeader={true}
+            afBackdrop={true}
+            afPosition={NavigationSidebarPosition.END}
+            afVariation={NavigationSidebarVariation.OVER}
+            afCloseButtonText="Close"
+            onAfOnClose={() => setMenuOpen(!menuOpen)}
+          >
+            <DigiNavigationVerticalMenu afVariation={NavigationVerticalMenuVariation.PRIMARY}>
+              <ul>
+                <li>
+                  <Link to="/">
+                    <DigiNavigationVerticalMenuItem
+                      afText="Home"
+                      afActive={true}
+                    ></DigiNavigationVerticalMenuItem>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/search">
+                    <DigiNavigationVerticalMenuItem
+                      afText="Search"
+                      afActive={true}
+                    ></DigiNavigationVerticalMenuItem>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact">
+                    <DigiNavigationVerticalMenuItem
+                      afText="Contact"
+                      afActive={true}
+                    ></DigiNavigationVerticalMenuItem>
+                  </Link>
+                </li>
+              </ul>
+            </DigiNavigationVerticalMenu>
+          </DigiNavigationSidebar>
+        </DigiNavigationSidebarButton>
+      </HeaderWrapper>
+    </>
+  );
+};

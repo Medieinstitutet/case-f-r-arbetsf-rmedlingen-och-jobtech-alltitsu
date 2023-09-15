@@ -1,21 +1,10 @@
 @import "../colorvariables.scss";
 
-h1 {
-    color: $DarkColor;
-    font-size: 2rem;
+body {
+    background-color: $FirstColor;
 }
 
-.punchLine {
-    font-style: italic;
-}
-p {
-    color: $DarkColor;
-    font-size: 1.3rem;
-    padding: 10px;
-    line-height: 2rem;
-}
-
-div {
+.homePage {
     max-width: 500px;
     display: flex;
     flex-direction: column;
@@ -23,29 +12,42 @@ div {
     align-items: center;
     margin:auto;
     padding: 1rem;
-}
 
-li {
-    font-size: 1.3rem;
-    padding:10px;
-}
+    h1 {
+        color: $DarkColor;
+        font-size: 2rem;
+    }
 
-span {
-    font-weight: bold;
-}
+    .punchLine {
+        font-style: italic;
+    }
 
-body {
-    background-color: $FirstColor;
-}
+    p {
+        color: $DarkColor;
+        font-size: 1.3rem;
+        padding: 10px;
+        line-height: 2rem;
+    }
 
-h3 {
-    font-size: 1.8rem;
-    font-style: italic;
-    margin: 1rem;
-}
-.about {
-    font-style: italic;
-    line-height: 2rem;
-    margin-top: 0;
-    
+    li {
+        font-size: 1.3rem;
+        padding:10px;
+    }
+
+    span {
+        font-weight: bold;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        font-style: italic;
+        margin: 1rem;
+    }
+
+    .about {
+        font-style: italic;
+        line-height: 2rem;
+        margin-top: 0;
+        
+    }
 }

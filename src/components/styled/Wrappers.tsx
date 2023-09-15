@@ -1,5 +1,14 @@
 import styled from 'styled-components';
 
+export const HeaderWrapper = styled.header`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #c2efeb;
+`;
+
 export const JobWrapper = styled.div`
   background-color: #6ea4bf;
   margin: 1em;
