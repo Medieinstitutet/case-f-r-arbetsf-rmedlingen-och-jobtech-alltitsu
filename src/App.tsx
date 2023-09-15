@@ -1,15 +1,7 @@
-import { DigiButton } from '@digi/arbetsformedlingen-react';
-import { ButtonVariation } from '@digi/arbetsformedlingen';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './Router';
 
 export function App() {
-
-	function myFunction(e: Event) {
-		console.log(e)
-	}
-
-	return (
-		<DigiButton onAfOnClick={myFunction} afVariation={ButtonVariation.PRIMARY}>Skicka</DigiButton>
-	);
+  return <RouterProvider router={router}></RouterProvider>;
 }
 export default App;
-								
