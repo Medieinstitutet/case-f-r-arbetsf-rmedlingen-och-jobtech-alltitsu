@@ -1,6 +1,9 @@
 import React, { useState, FormEvent } from 'react';
+import { DigiButton } from '@digi/arbetsformedlingen-react';
+import { ButtonSize, ButtonVariation } from '@digi/arbetsformedlingen';
 import "./SearchForm.scss"
 import "../colorvariables.scss"
+import "./Alltitsu.scss";
 
 export function SearchForm() {
   const [fromDate, setFromDate] = useState('');
@@ -57,7 +60,13 @@ export function SearchForm() {
           />
         </div>
         <div className='searchButtonDiv'>
-          <button className='searchButton' type="submit">Sök</button>
+        <DigiButton
+          afSize={ButtonSize.MEDIUM}
+          afVariation={ButtonVariation.PRIMARY}
+          afFullWidth={false}
+          className="alltitsuStyling" >
+          Sök
+        </DigiButton>
         </div>
       </form>
     </div>

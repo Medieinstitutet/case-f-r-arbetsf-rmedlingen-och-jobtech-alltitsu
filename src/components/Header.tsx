@@ -13,7 +13,7 @@ import {
 } from '@digi/arbetsformedlingen';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import "./Header.scss";
+import "./Alltitsu.scss";
 
 
 export const Header = () => {
