@@ -39,7 +39,7 @@ export function SearchForm() {
             afLabel="Från:"
             afVariation={FormInputVariation.MEDIUM}
             afType={FormInputType.DATE}
-            afValidation={FormInputValidation.NEUTRAL}	
+            afValidation={FormInputValidation.NEUTRAL}
             onAfOnInput={handleFromDateChange}	
           >
           </DigiFormInput>
