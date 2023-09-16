@@ -1,25 +1,30 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useState } from 'react';
 import "./SearchForm.scss"
 import "../colorvariables.scss"
+
+import { DigiButton, DigiFormInput } from '@digi/arbetsformedlingen-react';
+import { FormInputVariation, FormInputType, FormInputValidation, ButtonSize, ButtonVariation } from '@digi/arbetsformedlingen';
+import { DigiFormInputCustomEvent } from '@digi/arbetsformedlingen/dist/types/components';
 
 export function SearchForm() {
   const [fromDate, setFromDate] = useState('');
   const [toDate, setToDate] = useState('');
   const [company, setCompany] = useState('');
 
-  const handleFromDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFromDate(e.target.value);
+  const handleFromDateChange = (e: DigiFormInputCustomEvent<Date>) => {
+    setFromDate(e.target.value.toString());
   };
 
-  const handleToDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setToDate(e.target.value);
+  const handleToDateChange = (e: DigiFormInputCustomEvent<Date>) => {
+    setToDate(e.target.value.toString());
   };
 
-  const handleCompanyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setCompany(e.target.value);
+  const handleCompanyChange = (e: DigiFormInputCustomEvent<string>) => {
+    setCompany(e.target.value.toString());
+    console.log("Setting company to", e.target.value.toString());
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: Event) => {
     e.preventDefault();
 
     console.log('From Date:', fromDate);
@@ -28,36 +33,45 @@ export function SearchForm() {
   };
   return (
     <div className='searchForm'>
-      <form onSubmit={handleSubmit}>
+      <form>
         <div className="formField">
-          <label htmlFor="fromDate">Från:</label>
-          <input
-            type="date"
-            id="fromDate"
-            value={fromDate}
-            onChange={handleFromDateChange}
-          />
+         <DigiFormInput
+            afLabel="Från:"
+            afVariation={FormInputVariation.MEDIUM}
+            afType={FormInputType.DATE}
+            afValidation={FormInputValidation.NEUTRAL}	
+            onAfOnInput={handleFromDateChange}	
+          >
+          </DigiFormInput>
         </div>
         <div className="formField">
-          <label htmlFor="toDate">Till:</label>
-          <input
-            type="date"
-            id="toDate"
-            value={toDate}
-            onChange={handleToDateChange}
-          />
+        <DigiFormInput
+            afLabel="Till:"
+            afVariation={FormInputVariation.MEDIUM}
+            afType={FormInputType.DATE}
+            afValidation={FormInputValidation.NEUTRAL}
+            onAfOnInput={handleToDateChange}				
+          >
+          </DigiFormInput>
         </div>
         <div className="formField">
-          <label htmlFor="company">Företag:</label>
-          <input
-            type="text"
-            id="company"
-            value={company}
-            onChange={handleCompanyChange}
-          />
+        <DigiFormInput
+            afLabel="Företag:"
+            afVariation={FormInputVariation.MEDIUM}
+            afType={FormInputType.TEXT}
+            afValidation={FormInputValidation.NEUTRAL}		
+            onAfOnInput={handleCompanyChange}		
+          >
+          </DigiFormInput>
         </div>
         <div className='searchButtonDiv'>
-          <button className='searchButton' type="submit">Sök</button>
+        <DigiButton
+          afSize={ButtonSize.MEDIUM}
+          afVariation={ButtonVariation.PRIMARY}
+          afFullWidth={false}
+          onAfOnClick={handleSubmit}>
+          Sök
+        </DigiButton>
         </div>
       </form>
     </div>
