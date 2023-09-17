@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
 import './SearchForm.scss';
 import '../colorvariables.scss';
 import './Alltitsu.scss';
