@@ -1,12 +1,16 @@
-import React, { useState, FormEvent } from 'react';
-import { DigiButton } from '@digi/arbetsformedlingen-react';
-import { ButtonSize, ButtonVariation } from '@digi/arbetsformedlingen';
-import "./SearchForm.scss"
-import "../colorvariables.scss"
-import "./Alltitsu.scss";
+import { useState, FormEvent } from 'react';
+import './SearchForm.scss';
+import '../colorvariables.scss';
+import './Alltitsu.scss';
 
 import { DigiButton, DigiFormInput } from '@digi/arbetsformedlingen-react';
-import { FormInputVariation, FormInputType, FormInputValidation, ButtonSize, ButtonVariation } from '@digi/arbetsformedlingen';
+import {
+  FormInputVariation,
+  FormInputType,
+  FormInputValidation,
+  ButtonSize,
+  ButtonVariation,
+} from '@digi/arbetsformedlingen';
 import { DigiFormInputCustomEvent } from '@digi/arbetsformedlingen/dist/types/components';
 
 export function SearchForm() {
@@ -24,7 +28,7 @@ export function SearchForm() {
 
   const handleCompanyChange = (e: DigiFormInputCustomEvent<string>) => {
     setCompany(e.target.value.toString());
-    console.log("Setting company to", e.target.value.toString());
+    console.log('Setting company to', e.target.value.toString());
   };
 
   const handleSubmit = (e: Event) => {
@@ -35,47 +39,45 @@ export function SearchForm() {
     console.log('Company:', company);
   };
   return (
-    <div className='searchForm'>
+    <div className="searchForm">
       <form>
         <div className="formField">
-         <DigiFormInput
+          <DigiFormInput
             afLabel="Från:"
             afVariation={FormInputVariation.MEDIUM}
             afType={FormInputType.DATE}
             afValidation={FormInputValidation.NEUTRAL}
-            onAfOnInput={handleFromDateChange}	
-          >
-          </DigiFormInput>
+            onAfOnInput={handleFromDateChange}
+          ></DigiFormInput>
         </div>
         <div className="formField">
-        <DigiFormInput
+          <DigiFormInput
             afLabel="Till:"
             afVariation={FormInputVariation.MEDIUM}
             afType={FormInputType.DATE}
             afValidation={FormInputValidation.NEUTRAL}
-            onAfOnInput={handleToDateChange}				
-          >
-          </DigiFormInput>
+            onAfOnInput={handleToDateChange}
+          ></DigiFormInput>
         </div>
         <div className="formField">
-        <DigiFormInput
+          <DigiFormInput
             afLabel="Företag:"
             afVariation={FormInputVariation.MEDIUM}
             afType={FormInputType.TEXT}
-            afValidation={FormInputValidation.NEUTRAL}		
-            onAfOnInput={handleCompanyChange}		
-          >
-          </DigiFormInput>
+            afValidation={FormInputValidation.NEUTRAL}
+            onAfOnInput={handleCompanyChange}
+          ></DigiFormInput>
         </div>
-        <div className='searchButtonDiv'>
-        <DigiButton
-          afSize={ButtonSize.MEDIUM}
-          afVariation={ButtonVariation.PRIMARY}
-          afFullWidth={false}
-          className="alltitsuStyling" >
-          onAfOnClick={handleSubmit}>
-          Sök
-        </DigiButton>
+        <div className="searchButtonDiv">
+          <DigiButton
+            afSize={ButtonSize.MEDIUM}
+            afVariation={ButtonVariation.PRIMARY}
+            afFullWidth={false}
+            className="alltitsuStyling"
+            onAfOnClick={handleSubmit}
+          >
+            Sök
+          </DigiButton>
         </div>
       </form>
     </div>
