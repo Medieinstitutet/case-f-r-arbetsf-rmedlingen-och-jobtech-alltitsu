@@ -32,7 +32,7 @@ export const Header = () => {
             afBackdrop={true}
             afPosition={NavigationSidebarPosition.END}
             afVariation={NavigationSidebarVariation.OVER}
-            afCloseButtonText="Close"
+            afCloseButtonText="Stäng"
             onAfOnClose={() => setMenuOpen(!menuOpen)}
             className="alltitsuStyling" 
           >
@@ -41,7 +41,7 @@ export const Header = () => {
                 <li>
                   <Link to="/">
                     <DigiNavigationVerticalMenuItem
-                      afText="Home"
+                      afText="Hem"
                       afActive={true}
                       style={{ background: 'var(--digi--navigation-vertical-menu-item--active-indicator-background-color)' }} // Apply custom CSS style
                       className="alltitsuStyling" 
@@ -51,7 +51,7 @@ export const Header = () => {
                 <li>
                   <Link to="/search">
                     <DigiNavigationVerticalMenuItem
-                      afText="Search"
+                      afText="Sök"
                       afActive={true}
                       style={{ background: 'var(--digi--navigation-vertical-menu-item--active-indicator-background-color)' }} // Apply custom CSS style
                       className="alltitsuStyling" 
@@ -61,7 +61,7 @@ export const Header = () => {
                 <li>
                   <Link to="/contact">
                     <DigiNavigationVerticalMenuItem
-                      afText="Contact"
+                      afText="Kontakt"
                       afActive={true}
                       style={{ background: 'var(--digi--navigation-vertical-menu-item--active-indicator-background-color)' }} // Apply custom CSS style
                       className="alltitsuStyling" 
