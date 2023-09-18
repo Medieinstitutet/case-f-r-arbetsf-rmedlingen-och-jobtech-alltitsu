@@ -39,7 +39,17 @@ export const ContactForm = () => {
 
   const handleSubmit = (e: Event) => {
     e.preventDefault();
-    console.log('formuläret skickades' + JSON.stringify(formData));
+
+    if (
+      /^[a-zA-Z]+$/.test(formData.username) &&
+      /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/.test(formData.email) &&
+      formData.message.trim() !== ''
+    ) {
+      console.log('formuläret skickades' + JSON.stringify(formData));
+    } else {
+      alert('Fyll i alla fält');
+      return;
+    }
 
     setFormData({
       username: '',
