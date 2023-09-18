@@ -1,6 +1,14 @@
-export interface IJobSearch {
+export interface IJobSearchResponse {
     total: number;
-    fromDate: string;
-    toDate: string;
-    employer: string;
+    hits: [
+      id: number,
+      description:{
+        text: string,
+      },
+      employer: {
+        name: string,
+      }
+
+    ]
+   
   }
