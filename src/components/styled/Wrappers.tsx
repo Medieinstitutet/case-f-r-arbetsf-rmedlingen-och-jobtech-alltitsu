@@ -23,10 +23,11 @@ export const JobWrapper = styled.div`
 export const ContactWrapper = styled.div`
   background-color: #6ea4bf;
   display: flex;
+  max-width: 500px;
   justify-content: center;
   flex-direction: column;
-  margin: 1rem 2rem;
-  padding: 1em;
+  margin: auto;
+  padding: 20px;
   border-radius: 5px;
   border: 1px solid #41337a;
   background: #6ea4bf;

@@ -1,3 +1,4 @@
+import './ContactForm.scss';
 import {
   FormInputVariation,
   FormInputType,
@@ -87,15 +88,17 @@ export const ContactForm = () => {
           afValue={formData.message}
           onAfOnInput={handleInput}
         ></DigiFormTextarea>
-        <DigiButton
-          afSize={ButtonSize.MEDIUM}
-          afVariation={ButtonVariation.PRIMARY}
-          afFullWidth={false}
-          className="alltitsuStyling"
-          onAfOnClick={handleSubmit}
-        >
-          Skicka
-        </DigiButton>
+        <div className="contact-btn">
+          <DigiButton
+            afSize={ButtonSize.MEDIUM}
+            afVariation={ButtonVariation.PRIMARY}
+            afFullWidth={false}
+            className="alltitsuStyling"
+            onAfOnClick={handleSubmit}
+          >
+            Skicka
+          </DigiButton>
+        </div>
       </form>
     </ContactWrapper>
   );
