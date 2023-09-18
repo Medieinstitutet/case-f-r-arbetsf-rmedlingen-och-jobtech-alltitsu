@@ -35,3 +35,24 @@ export const ContactWrapper = styled.div`
     0px 4px 4px 0px rgba(0, 0, 0, 0.25),
     0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
+
+export const FooterWrapper = styled.footer`
+  background-color: #6ea4bf;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  padding: 5px;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  margin-top: 5rem;
+
+  @media (min-width: 700px) {
+    flex-direction: row;
+    align-items: flex-start;
+    position: absolute;
+    bottom: 0;
+  }
+`;

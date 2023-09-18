@@ -1,0 +1,97 @@
+@import '../colorvariables.scss';
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  text-align: center;
+
+  h3 {
+    color: $DarkColor;
+    font-size: 1.2rem;
+  }
+
+  .footer-about {
+    color: $DarkColor;
+    padding: 0 20px;
+    font-size: 0.8rem;
+  }
+
+  .footer-company-name {
+    font-size: 1rem;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-center {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  i {
+    background-color: $DarkColor;
+    color: #ffffff;
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    margin: 10px 15px;
+    vertical-align: middle;
+  }
+
+  .contact-info {
+    display: flex;
+    align-items: flex-start;
+    font-size: 0.8rem;
+  }
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 150px;
+
+  h3 {
+    color: $DarkColor;
+    font-size: 1.2rem;
+  }
+
+  .footer-icons {
+    a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      background-color: $DarkColor;
+      border-radius: 2px;
+
+      font-size: 1rem;
+      color: #ffffff;
+      text-align: center;
+      line-height: 30px;
+
+      margin-right: 8px;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .wrapper,
+  .footer-right,
+  .footer-left {
+    width: 30%;
+  }
+
+  .footer-center {
+    width: 70%;
+  }
+}
