@@ -13,6 +13,8 @@ import {
 } from '@digi/arbetsformedlingen';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import "./Alltitsu.scss";
+
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,6 +34,7 @@ export const Header = () => {
             afVariation={NavigationSidebarVariation.OVER}
             afCloseButtonText="Stäng"
             onAfOnClose={() => setMenuOpen(!menuOpen)}
+            className="alltitsuStyling" 
           >
             <DigiNavigationVerticalMenu afVariation={NavigationVerticalMenuVariation.PRIMARY}>
               <ul>
@@ -40,6 +43,8 @@ export const Header = () => {
                     <DigiNavigationVerticalMenuItem
                       afText="Hem"
                       afActive={true}
+                      style={{ background: 'var(--digi--navigation-vertical-menu-item--active-indicator-background-color)' }} // Apply custom CSS style
+                      className="alltitsuStyling" 
                     ></DigiNavigationVerticalMenuItem>
                   </Link>
                 </li>
@@ -48,6 +53,8 @@ export const Header = () => {
                     <DigiNavigationVerticalMenuItem
                       afText="Sök"
                       afActive={true}
+                      style={{ background: 'var(--digi--navigation-vertical-menu-item--active-indicator-background-color)' }} // Apply custom CSS style
+                      className="alltitsuStyling" 
                     ></DigiNavigationVerticalMenuItem>
                   </Link>
                 </li>
@@ -56,6 +63,8 @@ export const Header = () => {
                     <DigiNavigationVerticalMenuItem
                       afText="Kontakt"
                       afActive={true}
+                      style={{ background: 'var(--digi--navigation-vertical-menu-item--active-indicator-background-color)' }} // Apply custom CSS style
+                      className="alltitsuStyling" 
                     ></DigiNavigationVerticalMenuItem>
                   </Link>
                 </li>
