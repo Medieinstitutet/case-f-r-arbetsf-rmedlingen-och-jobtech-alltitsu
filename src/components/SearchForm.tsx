@@ -12,6 +12,7 @@ import {
   ButtonVariation,
 } from '@digi/arbetsformedlingen';
 import { DigiFormInputCustomEvent } from '@digi/arbetsformedlingen/dist/types/components';
+import { getHistoricalJobs } from '../services/jobSearch';
 
 export function SearchForm() {
   const [fromDate, setFromDate] = useState('');
@@ -31,8 +32,10 @@ export function SearchForm() {
     console.log('Setting company to', e.target.value.toString());
   };
 
-  const handleSubmit = (e: Event) => {
+  const handleSubmit = async (e: Event) => {
     e.preventDefault();
+    const getHistoricalData = await getHistoricalJobs(fromDate, toDate, company);
+    console.log(getHistoricalData);
 
     console.log('From Date:', fromDate);
     console.log('To Date:', toDate);
