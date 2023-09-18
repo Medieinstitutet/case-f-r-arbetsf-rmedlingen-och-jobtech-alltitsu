@@ -26,14 +26,18 @@ export const ContactWrapper = styled.div`
   max-width: 500px;
   justify-content: center;
   flex-direction: column;
-  margin: auto;
+  margin: 45px;
   padding: 20px;
   border-radius: 5px;
   border: 1px solid #41337a;
-  background: #6ea4bf;
   box-shadow:
     0px 4px 4px 0px rgba(0, 0, 0, 0.25),
     0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  @media (min-width: 700px) {
+    margin: auto;
+    margin-top: 5rem;
+  }
 `;
 
 export const FooterWrapper = styled.footer`
@@ -48,11 +52,11 @@ export const FooterWrapper = styled.footer`
   overflow-x: hidden;
   box-sizing: border-box;
   margin-top: 5rem;
+  position: absolute;
+  bottom: 0;
 
   @media (min-width: 700px) {
     flex-direction: row;
     align-items: flex-start;
-    position: absolute;
-    bottom: 0;
   }
 `;
