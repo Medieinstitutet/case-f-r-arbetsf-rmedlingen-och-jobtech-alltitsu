@@ -43,7 +43,7 @@ export const ContactForm = () => {
 
     if (
       /^[a-zA-Z]+$/.test(formData.username) &&
-      /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/.test(formData.email) &&
+      /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email) &&
       formData.message.trim() !== ''
     ) {
       console.log('formuläret skickades' + JSON.stringify(formData));
