@@ -13,6 +13,8 @@ import {
 } from '@digi/arbetsformedlingen';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import "./Alltitsu.scss";
+
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,32 +32,39 @@ export const Header = () => {
             afBackdrop={true}
             afPosition={NavigationSidebarPosition.END}
             afVariation={NavigationSidebarVariation.OVER}
-            afCloseButtonText="Close"
+            afCloseButtonText="Stäng"
             onAfOnClose={() => setMenuOpen(!menuOpen)}
+            className="alltitsuStyling" 
           >
             <DigiNavigationVerticalMenu afVariation={NavigationVerticalMenuVariation.PRIMARY}>
               <ul>
                 <li>
                   <Link to="/">
                     <DigiNavigationVerticalMenuItem
-                      afText="Home"
+                      afText="Hem"
                       afActive={true}
+                      style={{ background: 'var(--digi--navigation-vertical-menu-item--active-indicator-background-color)' }} // Apply custom CSS style
+                      className="alltitsuStyling" 
                     ></DigiNavigationVerticalMenuItem>
                   </Link>
                 </li>
                 <li>
                   <Link to="/search">
                     <DigiNavigationVerticalMenuItem
-                      afText="Search"
+                      afText="Sök"
                       afActive={true}
+                      style={{ background: 'var(--digi--navigation-vertical-menu-item--active-indicator-background-color)' }} // Apply custom CSS style
+                      className="alltitsuStyling" 
                     ></DigiNavigationVerticalMenuItem>
                   </Link>
                 </li>
                 <li>
                   <Link to="/contact">
                     <DigiNavigationVerticalMenuItem
-                      afText="Contact"
+                      afText="Kontakt"
                       afActive={true}
+                      style={{ background: 'var(--digi--navigation-vertical-menu-item--active-indicator-background-color)' }} // Apply custom CSS style
+                      className="alltitsuStyling" 
                     ></DigiNavigationVerticalMenuItem>
                   </Link>
                 </li>
