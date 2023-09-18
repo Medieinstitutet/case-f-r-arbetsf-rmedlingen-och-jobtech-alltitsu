@@ -3,6 +3,7 @@ export interface IJobSearchResponse {
     hits: [
       id: number,
       description:{
+        title: string,
         text: string,
       },
       employer: {
