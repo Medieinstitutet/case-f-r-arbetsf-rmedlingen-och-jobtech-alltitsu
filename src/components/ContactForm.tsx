@@ -14,14 +14,10 @@ import {
   DigiFormInputCustomEvent,
   DigiFormTextareaCustomEvent,
 } from '@digi/arbetsformedlingen/dist/types/components';
+import submitForm from '../services/contactFormService';
+import { IContactForm } from '../models/IContactForm';
 
 export const ContactForm = () => {
-  interface IContactForm {
-    username: string;
-    email: string;
-    message: string;
-  }
-
   const [formData, setFormData] = useState<IContactForm>({
     username: '',
     email: '',
@@ -38,18 +34,21 @@ export const ContactForm = () => {
     console.log(formData);
   };
 
-  const handleSubmit = (e: Event) => {
+  const handleSubmit = async (e: Event) => {
     e.preventDefault();
-
-    if (
-      /^[a-zA-Z]+$/.test(formData.username) &&
-      /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email) &&
-      formData.message.trim() !== ''
-    ) {
-      console.log('formuläret skickades' + JSON.stringify(formData));
-    } else {
-      alert('Fyll i alla fält');
-      return;
+    try {
+      if (
+        /^[a-zA-Z]+$/.test(formData.username) &&
+        /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email) &&
+        formData.message.trim() !== ''
+      ) {
+        await submitForm(formData);
+      } else {
+        alert('Fyll i alla fält');
+        return;
+      }
+    } catch (error) {
+      console.log(error);
     }
 
     setFormData({
