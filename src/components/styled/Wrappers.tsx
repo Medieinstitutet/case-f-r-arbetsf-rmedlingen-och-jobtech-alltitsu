@@ -60,3 +60,26 @@ export const FooterWrapper = styled.footer`
     align-items: flex-start;
   }
 `;
+
+export const AdWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+
+  section {
+    padding: 20px;
+
+    span {
+      display: block;
+      font-size: 0.8rem;
+    }
+  }
+`;
+
+export const DetailsWrapper = styled.div`
+  border: 1px solid black;
+  width: 45%;
+  border-radius: 10px;
+  padding: 15px;
+`;

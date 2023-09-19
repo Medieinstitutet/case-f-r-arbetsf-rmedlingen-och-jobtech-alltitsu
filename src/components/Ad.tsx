@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getSingleAd } from '../services/jobSearch';
 import { ISingleAd } from '../models/ISingleAd';
+import { AdWrapper, DetailsWrapper } from './styled/Wrappers';
 
 export const Ad = () => {
   const { id } = useParams();
@@ -213,26 +214,26 @@ export const Ad = () => {
   });
 
   return (
-    <>
-      <article>
+    <AdWrapper>
+      <DetailsWrapper>
         <img src={ad.logo_url} alt="" />
         <h4>{ad.employer.name}</h4>
         <p>Org. nr: {ad.employer.organization_number}</p>
-      </article>
-      <section>
+      </DetailsWrapper>
+      <DetailsWrapper>
         <h4>Detaljer</h4>
         <p>Var: {ad.workplace_address.municipality}</p>
         <p>Villkor: {ad.description.conditions}</p>
         <p>Lönvillkor: {ad.salary_description}</p>
-        <p>Körkort krävs: {ad.driving_license_required ? 'Ja' : 'Nej'}</p>
         <p>Erfarenhet krävs: {ad.experience_required ? 'Ja' : 'Nej'}</p>
-      </section>
+        <p>Körkort krävs: {ad.driving_license_required ? 'Ja' : 'Nej'}</p>
+      </DetailsWrapper>
       <section>
-        <p>Publicerad: {new Date(ad.publication_date).toLocaleString()}</p>
-        <p>Deadline: {new Date(ad.application_deadline).toLocaleString()}</p>
+        <span>Publicerad: {new Date(ad.publication_date).toLocaleString()}</span>
+        <span>Deadline: {new Date(ad.application_deadline).toLocaleString()}</span>
         <h4>{ad.headline}</h4>
         <p>{ad.description.text}</p>
       </section>
-    </>
+    </AdWrapper>
   );
 };
