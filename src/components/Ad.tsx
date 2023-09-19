@@ -220,6 +220,14 @@ export const Ad = () => {
         <p>Org. nr: {ad.employer.organization_number}</p>
       </article>
       <section>
+        <h4>Detaljer</h4>
+        <p>Var: {ad.workplace_address.municipality}</p>
+        <p>Villkor: {ad.description.conditions}</p>
+        <p>Lönvillkor: {ad.salary_description}</p>
+        <p>Körkort krävs: {ad.driving_license_required ? 'Ja' : 'Nej'}</p>
+        <p>Erfarenhet krävs: {ad.experience_required ? 'Ja' : 'Nej'}</p>
+      </section>
+      <section>
         <p>Publicerad: {new Date(ad.publication_date).toLocaleString()}</p>
         <p>Deadline: {new Date(ad.application_deadline).toLocaleString()}</p>
         <h4>{ad.headline}</h4>
