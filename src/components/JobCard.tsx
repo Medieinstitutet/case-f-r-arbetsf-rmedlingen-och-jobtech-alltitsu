@@ -1,4 +1,4 @@
-import { DigiLinkInternal, DigiTypography } from '@digi/arbetsformedlingen-react';
+import { DigiLinkExternal, DigiTypography } from '@digi/arbetsformedlingen-react';
 import { JobWrapper } from './styled/Wrappers';
 import { LinkVariation, TypographyVariation } from '@digi/arbetsformedlingen';
 import './JobCard.scss';
@@ -18,9 +18,9 @@ export const JobCard: React.FC<JobCardProps> = ({ title, text, employer, id }) =
         <p>{employer}</p>
         <p className="jobDescription">{text}</p>
       </DigiTypography>
-      <DigiLinkInternal afHref={`/${id}`} afVariation={LinkVariation.SMALL}>
+      <DigiLinkExternal afHref={`/${id}`} afTarget="_blank" afVariation={LinkVariation.SMALL}>
         Gå till annons
-      </DigiLinkInternal>
+      </DigiLinkExternal>
     </JobWrapper>
   );
 };
