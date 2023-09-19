@@ -4,6 +4,7 @@ import { SearchPage } from './components/SearchPage';
 import { Contact } from './components/Contact';
 import { Layout } from './components/Layout';
 import { Error } from './components/Error';
+import { Ad } from './components/Ad';
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact />,
+      },
+      {
+        path: '/:id',
+        element: <Ad />,
       },
     ],
   },
