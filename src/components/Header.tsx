@@ -43,7 +43,7 @@ export const Header = () => {
                     <DigiNavigationVerticalMenuItem
                       afText="Hem"
                       afActive={true}
-                      style={{ background: 'var(--digi--navigation-vertical-menu-item--active-indicator-background-color)' }} // Apply custom CSS style
+                      style={{ background: 'var(--digi--navigation-vertical-menu-item--active-indicator-background-color)' }} 
                       className="alltitsuStyling" 
                     ></DigiNavigationVerticalMenuItem>
                   </Link>
@@ -53,7 +53,7 @@ export const Header = () => {
                     <DigiNavigationVerticalMenuItem
                       afText="Sök"
                       afActive={true}
-                      style={{ background: 'var(--digi--navigation-vertical-menu-item--active-indicator-background-color)' }} // Apply custom CSS style
+                      style={{ background: 'var(--digi--navigation-vertical-menu-item--active-indicator-background-color)' }} 
                       className="alltitsuStyling" 
                     ></DigiNavigationVerticalMenuItem>
                   </Link>
@@ -63,7 +63,7 @@ export const Header = () => {
                     <DigiNavigationVerticalMenuItem
                       afText="Kontakt"
                       afActive={true}
-                      style={{ background: 'var(--digi--navigation-vertical-menu-item--active-indicator-background-color)' }} // Apply custom CSS style
+                      style={{ background: 'var(--digi--navigation-vertical-menu-item--active-indicator-background-color)' }} 
                       className="alltitsuStyling" 
                     ></DigiNavigationVerticalMenuItem>
                   </Link>
