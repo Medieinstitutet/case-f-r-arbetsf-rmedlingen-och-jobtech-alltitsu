@@ -207,14 +207,24 @@ export const Ad = () => {
       }
     };
 
-    if (ad.description.text === '') {
+    if (ad.id === '') {
       getAd();
     }
   });
 
   return (
     <>
-      <p>{ad.description.text}</p>
+      <article>
+        <img src={ad.logo_url} alt="" />
+        <h4>{ad.employer.name}</h4>
+        <p>Org. nr: {ad.employer.organization_number}</p>
+      </article>
+      <section>
+        <p>Publicerad: {new Date(ad.publication_date).toLocaleString()}</p>
+        <p>Deadline: {new Date(ad.application_deadline).toLocaleString()}</p>
+        <h4>{ad.headline}</h4>
+        <p>{ad.description.text}</p>
+      </section>
     </>
   );
 };
