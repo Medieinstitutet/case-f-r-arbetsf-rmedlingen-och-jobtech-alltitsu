@@ -13,11 +13,14 @@ import {
 } from '@digi/arbetsformedlingen';
 import { DigiFormInputCustomEvent } from '@digi/arbetsformedlingen/dist/types/components';
 import { getHistoricalJobs } from '../services/jobSearch';
+import { IJobSearchResponse } from '../models/IJobSearchResponse';
+import SearchResult from './SearchResult';
 
 export function SearchForm() {
   const [fromDate, setFromDate] = useState('');
   const [toDate, setToDate] = useState('');
   const [company, setCompany] = useState('');
+  const [searchResults, setSearchResults] = useState<IJobSearchResponse | null>(null);
 
   const handleFromDateChange = (e: DigiFormInputCustomEvent<Date>) => {
     setFromDate(e.target.value.toString());
@@ -36,6 +39,7 @@ export function SearchForm() {
     e.preventDefault();
     const getHistoricalData = await getHistoricalJobs(fromDate, toDate, company);
     console.log(getHistoricalData);
+    setSearchResults(getHistoricalData);
 
     console.log('From Date:', fromDate);
     console.log('To Date:', toDate);
@@ -83,6 +87,7 @@ export function SearchForm() {
           </DigiButton>
         </div>
       </form>
+      {searchResults && <SearchResult jobSearchResponse={searchResults} />}
     </div>
   );
 }
