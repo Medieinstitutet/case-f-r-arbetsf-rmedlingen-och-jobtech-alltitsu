@@ -19,3 +19,44 @@ export const JobWrapper = styled.div`
     0px 4px 4px 0px rgba(0, 0, 0, 0.25),
     0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
+
+export const ContactWrapper = styled.div`
+  background-color: #6ea4bf;
+  display: flex;
+  max-width: 500px;
+  justify-content: center;
+  flex-direction: column;
+  margin: 45px;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #41337a;
+  box-shadow:
+    0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+    0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  @media (min-width: 700px) {
+    margin: auto;
+    margin-top: 5rem;
+  }
+`;
+
+export const FooterWrapper = styled.footer`
+  background-color: #6ea4bf;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  padding: 5px;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  margin-top: 5rem;
+  position: absolute;
+  bottom: 0;
+
+  @media (min-width: 700px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+`;
