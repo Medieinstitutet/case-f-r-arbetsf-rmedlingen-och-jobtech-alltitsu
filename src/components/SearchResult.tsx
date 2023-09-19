@@ -1,9 +1,9 @@
 import React from 'react';
-import { JobCard } from './JobCard'; 
+import { JobCard } from './JobCard';
 import { IJobSearchResponse } from '../models/IJobSearchResponse';
 
 interface SearchResultProps {
-  jobSearchResponse: IJobSearchResponse; 
+  jobSearchResponse: IJobSearchResponse;
 }
 
 const SearchResult: React.FC<SearchResultProps> = ({ jobSearchResponse }) => {
@@ -14,7 +14,13 @@ const SearchResult: React.FC<SearchResultProps> = ({ jobSearchResponse }) => {
   return (
     <div>
       {jobSearchResponse.hits.map((hit) => (
-        <JobCard key={hit.id} title={hit.occupation.label} text={hit.description.text} employer={hit.employer.name} />
+        <JobCard
+          key={hit.id}
+          id={hit.id}
+          title={hit.occupation.label}
+          text={hit.description.text}
+          employer={hit.employer.name}
+        />
       ))}
     </div>
   );
