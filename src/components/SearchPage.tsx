@@ -4,14 +4,7 @@ import { IJobSearchResponse } from '../models/IJobSearchResponse';
 import { SearchForm } from './SearchForm';
 import SearchResult from './SearchResult';
 import { useState } from 'react';
-import {
-  CompanyContext,
-  FromDateContext,
-  SetCompanyContext,
-  SetFromDateContext,
-  SetToDateContext,
-  ToDateContext,
-} from '../context/SearchContext';
+import { SetCompanyContext, SetFromDateContext, SetToDateContext } from '../context/SearchContext';
 import { DigiFormInputCustomEvent } from '@digi/arbetsformedlingen/dist/types/components';
 import { getHistoricalJobs } from '../services/jobSearch';
 
@@ -41,7 +34,6 @@ export const SearchPage = () => {
 
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
-    console.log('HEJ!!!');
 
     const getHistoricalData = await getHistoricalJobs(fromDate, toDate, company, offset);
     console.log(getHistoricalData);
