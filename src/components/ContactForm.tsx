@@ -24,7 +24,7 @@ export const ContactForm = () => {
     message: '',
   });
 
-  const [error, setError] = useState(false);
+  const [usernameError, setUsernameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [messageError, setMessageError] = useState(false);
 
@@ -35,19 +35,14 @@ export const ContactForm = () => {
     const name = e.target.afName;
 
     setFormData({ ...formData, [name]: e.target.value });
-    console.log(formData);
   };
 
   const validateForm = (field: string) => {
-    console.log(error);
-
     if (field === 'username') {
       if (/^[a-zåäöA-ZÅÄÖ]+$/.test(formData.username)) {
-        console.log(error);
-        setError(false);
+        setUsernameError(false);
       } else {
-        setError(true);
-        console.log(error);
+        setUsernameError(true);
       }
     } else if (field === 'email') {
       if (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email)) {
@@ -66,15 +61,11 @@ export const ContactForm = () => {
 
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
-    console.log('error' + error);
-    console.log('message' + messageError);
-    console.log('email' + emailError);
+    console.log('hej');
 
-    if (!error && !emailError && !messageError) {
+    if (!usernameError && !emailError && !messageError) {
       await submitForm(formData);
-      console.log('formulär skickat');
     } else {
-      console.log('fel i formuläret');
       return;
     }
 
@@ -88,7 +79,7 @@ export const ContactForm = () => {
   return (
     <ContactWrapper>
       <form>
-        {!error ? (
+        {!usernameError ? (
           <DigiFormInput
             afLabel="Namn:"
             afVariation={FormInputVariation.MEDIUM}
