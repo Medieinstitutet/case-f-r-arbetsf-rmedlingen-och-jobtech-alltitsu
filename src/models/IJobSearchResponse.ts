@@ -1,26 +1,19 @@
 export interface IJobSearchResponse {
   total: {
-    NumberOfHits: INumberOfHits;
+    value: number;
   };
   hits: IJobAdSearchResult[];
 }
 
-  interface IJobAdSearchResult {
-    id: string;
-    description: {
-      text: string;
-    };
-    employer: {
-      name: string;
-    };
-    occupation: {
-      label: string;
-    }
-  }
-  
-  interface INumberOfHits {
-    value: number;
-  }
-  
-
-  
+interface IJobAdSearchResult {
+  id: string;
+  description: {
+    text: string;
+  };
+  employer: {
+    name: string;
+  };
+  occupation: {
+    label: string;
+  };
+}
