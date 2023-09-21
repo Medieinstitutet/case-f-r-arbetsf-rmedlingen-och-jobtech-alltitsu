@@ -18,8 +18,8 @@ interface ISearchFormProps {
 }
 
 export function SearchForm({ handleSubmit }: ISearchFormProps) {
-  const SetToDate = useContext(SetToDateContext);
-  const SetFromDate = useContext(SetFromDateContext);
+  const setToDate = useContext(SetToDateContext);
+  const setFromDate = useContext(SetFromDateContext);
   const setCompany = useContext(SetCompanyContext);
 
   return (
@@ -32,17 +32,17 @@ export function SearchForm({ handleSubmit }: ISearchFormProps) {
             afVariation={FormInputVariation.MEDIUM}
             afType={FormInputType.DATE}
             afValidation={FormInputValidation.NEUTRAL}
-            onAfOnInput={SetFromDate}
+            onAfOnInput={setFromDate}
           ></DigiFormInput>
         </div>
         <div className="formField">
           <DigiFormInput
-            afValue={'2022-01-01'}
+            afValue={new Date().toLocaleDateString()}
             afLabel="Till:"
             afVariation={FormInputVariation.MEDIUM}
             afType={FormInputType.DATE}
             afValidation={FormInputValidation.NEUTRAL}
-            onAfOnInput={SetToDate}
+            onAfOnInput={setToDate}
           ></DigiFormInput>
         </div>
         <div className="formField">
