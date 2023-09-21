@@ -42,9 +42,9 @@ export const SearchPage = () => {
 
   return (
     <div>
-      <SetFromDateContext.Provider value={handleFromDateChange}>
-        <SetToDateContext.Provider value={handleToDateChange}>
-          <SetCompanyContext.Provider value={handleCompanyChange}>
+      <SetFromDateContext.Provider value={() => handleFromDateChange}>
+        <SetToDateContext.Provider value={() => handleToDateChange}>
+          <SetCompanyContext.Provider value={() => handleCompanyChange}>
             <SearchForm handleSubmit={handleSubmit} />
             <SearchResult jobSearchResponse={searchResults}></SearchResult>
             <DigiButton
