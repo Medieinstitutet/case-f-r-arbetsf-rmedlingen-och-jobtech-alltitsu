@@ -10,10 +10,9 @@ import { getHistoricalJobs } from '../services/jobSearch';
 
 export const SearchPage = () => {
   const [fromDate, setFromDate] = useState('2016-01-01');
-  const [toDate, setToDate] = useState('2022-01-01');
+  const [toDate, setToDate] = useState(new Date().toLocaleDateString());
   const [company, setCompany] = useState('');
   const [offset, setOffset] = useState(0);
-  const [showMoreButton, setShowMoreButton] = useState(false);
   const [searchResults, setSearchResults] = useState<IJobSearchResponse>({
     total: {
       value: 0,
@@ -39,35 +38,27 @@ export const SearchPage = () => {
     const getHistoricalData = await getHistoricalJobs(fromDate, toDate, company, offset);
     console.log(getHistoricalData);
     setSearchResults(getHistoricalData);
-
-    if (getHistoricalData.hits.length > 0) {
-      setShowMoreButton(true);
-    } else {
-      setShowMoreButton(false);
-    }
   };
 
   return (
     <div>
-      <SetFromDateContext.Provider value={() => handleFromDateChange}>
-        <SetToDateContext.Provider value={() => handleToDateChange}>
-          <SetCompanyContext.Provider value={() => handleCompanyChange}>
+      <SetFromDateContext.Provider value={handleFromDateChange}>
+        <SetToDateContext.Provider value={handleToDateChange}>
+          <SetCompanyContext.Provider value={handleCompanyChange}>
             <SearchForm handleSubmit={handleSubmit} />
             <SearchResult jobSearchResponse={searchResults}></SearchResult>
-            {showMoreButton && (
-              <DigiButton
-                afSize={ButtonSize.MEDIUM}
-                afVariation={ButtonVariation.PRIMARY}
-                afFullWidth={false}
-                className="alltitsuStyling"
-                onAfOnClick={(e: Event) => {
-                  setOffset(offset + 10);
-                  handleSubmit(e);
-                }}
-              >
-                Visa nästa tio träffar
-              </DigiButton>
-            )}
+            <DigiButton
+              afSize={ButtonSize.MEDIUM}
+              afVariation={ButtonVariation.PRIMARY}
+              afFullWidth={false}
+              className="alltitsuStyling"
+              onAfOnClick={(e: Event) => {
+                setOffset(offset + 10);
+                handleSubmit(e);
+              }}
+            >
+              Visa nästa tio träffar
+            </DigiButton>
           </SetCompanyContext.Provider>
         </SetToDateContext.Provider>
       </SetFromDateContext.Provider>
