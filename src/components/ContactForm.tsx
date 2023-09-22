@@ -1,4 +1,4 @@
-import './ContactForm.scss';
+import '../styles/ContactForm.scss';
 import {
   FormInputVariation,
   FormInputType,
