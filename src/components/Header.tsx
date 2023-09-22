@@ -13,7 +13,8 @@ import {
 } from '@digi/arbetsformedlingen';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Alltitsu.scss';
+import '../styles/Alltitsu.scss';
+import '../styles/Header.scss';
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
