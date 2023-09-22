@@ -1,15 +1,16 @@
 import React from 'react';
 import { JobCard } from './JobCard';
 import { IJobSearchResponse } from '../models/IJobSearchResponse';
+import "../styles/SearchResult.scss";
 
 interface SearchResultProps {
   jobSearchResponse: IJobSearchResponse;
 }
 
 const SearchResult: React.FC<SearchResultProps> = ({ jobSearchResponse }) => {
-  if (!Array.isArray(jobSearchResponse.hits)) {
-    return <div>Inga jobb annonserades under denna period</div>;
-  }
+  if (jobSearchResponse.hits.length === 0) {
+    return <div className='noResponse'>Inga jobb annonserades under denna period</div>;
+  } else {
 
   return (
     <div>
@@ -24,6 +25,7 @@ const SearchResult: React.FC<SearchResultProps> = ({ jobSearchResponse }) => {
       ))}
     </div>
   );
+}
 };
 
 export default SearchResult;
