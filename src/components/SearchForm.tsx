@@ -15,9 +15,11 @@ import { SetCompanyContext, SetFromDateContext, SetToDateContext } from '../cont
 
 interface ISearchFormProps {
   handleSubmit: (e: Event) => Promise<void>;
+  toDate: string;
+  fromDate: string;
 }
 
-export function SearchForm({ handleSubmit }: ISearchFormProps) {
+export function SearchForm({ handleSubmit, toDate, fromDate }: ISearchFormProps) {
   const setToDate = useContext(SetToDateContext);
   const setFromDate = useContext(SetFromDateContext);
   const setCompany = useContext(SetCompanyContext);
@@ -27,7 +29,7 @@ export function SearchForm({ handleSubmit }: ISearchFormProps) {
       <form>
         <div className="formField">
           <DigiFormInput
-            // afValue={'2020-09-01'}
+            afValue={fromDate}
             afLabel="Från:"
             afVariation={FormInputVariation.MEDIUM}
             afType={FormInputType.DATE}
@@ -37,7 +39,7 @@ export function SearchForm({ handleSubmit }: ISearchFormProps) {
         </div>
         <div className="formField">
           <DigiFormInput
-            // afValue={new Date().toLocaleDateString()}
+            afValue={toDate}
             afLabel="Till:"
             afVariation={FormInputVariation.MEDIUM}
             afType={FormInputType.DATE}

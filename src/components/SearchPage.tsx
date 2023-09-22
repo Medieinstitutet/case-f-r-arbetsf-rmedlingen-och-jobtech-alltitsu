@@ -46,7 +46,7 @@ export const SearchPage = () => {
           <SetCompanyContext.Provider
             value={(e: DigiFormInputCustomEvent<string>) => setCompany(e.target.value.toString())}
           >
-            <SearchForm handleSubmit={handleSubmit} />
+            <SearchForm handleSubmit={handleSubmit} toDate={toDate} fromDate={fromDate} />
             <SearchResult jobSearchResponse={searchResults}></SearchResult>
             {showMoreButton && (
               <DigiButton
