@@ -56,7 +56,7 @@ export function SearchForm({ handleSubmit }: ISearchFormProps) {
         </div>
         <div className="searchButtonDiv">
           <DigiButton
-            afSize={ButtonSize.MEDIUM}
+            afSize={ButtonSize.LARGE}
             afVariation={ButtonVariation.PRIMARY}
             afFullWidth={false}
             className="alltitsuStyling"
