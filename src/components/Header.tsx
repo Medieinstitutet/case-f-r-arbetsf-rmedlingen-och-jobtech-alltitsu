@@ -18,7 +18,7 @@ import { useMediaQuery } from '../hooks/useMediaQuery';
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const isBreakpoint = useMediaQuery(768);
+  const isBreakpoint = useMediaQuery(1000);
 
   const mobileNav = (
     <DigiNavigationSidebarButton afText="Meny" onClick={() => setMenuOpen(!menuOpen)}>
