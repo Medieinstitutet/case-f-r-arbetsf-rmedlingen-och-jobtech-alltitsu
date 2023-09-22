@@ -25,6 +25,7 @@ export const SearchPage = () => {
     e.preventDefault();
 
     const getHistoricalData = await getHistoricalJobs(fromDate, toDate, company, offset);
+    console.log(fromDate, toDate, company, offset);
     console.log(getHistoricalData);
     setSearchResults(getHistoricalData);
     if (getHistoricalData.hits.length > 0) {

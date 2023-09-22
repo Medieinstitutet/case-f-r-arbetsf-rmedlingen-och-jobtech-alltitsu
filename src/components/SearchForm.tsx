@@ -27,7 +27,7 @@ export function SearchForm({ handleSubmit }: ISearchFormProps) {
       <form>
         <div className="formField">
           <DigiFormInput
-            afValue={'2016-01-01'}
+            // afValue={'2020-09-01'}
             afLabel="Från:"
             afVariation={FormInputVariation.MEDIUM}
             afType={FormInputType.DATE}
@@ -37,7 +37,7 @@ export function SearchForm({ handleSubmit }: ISearchFormProps) {
         </div>
         <div className="formField">
           <DigiFormInput
-            afValue={new Date().toLocaleDateString()}
+            // afValue={new Date().toLocaleDateString()}
             afLabel="Till:"
             afVariation={FormInputVariation.MEDIUM}
             afType={FormInputType.DATE}
