@@ -36,24 +36,30 @@ export const SearchPage = () => {
 
   return (
     <div>
-      <SetFromDateContext.Provider value={(e: DigiFormInputCustomEvent<Date>) => setFromDate(e.target.value.toString())}>
-        <SetToDateContext.Provider value={(e: DigiFormInputCustomEvent<Date>) => setToDate(e.target.value.toString())}>
-          <SetCompanyContext.Provider value={(e: DigiFormInputCustomEvent<string>) => setCompany(e.target.value.toString())}>
+      <SetFromDateContext.Provider
+        value={(e: DigiFormInputCustomEvent<Date>) => setFromDate(e.target.value.toString())}
+      >
+        <SetToDateContext.Provider
+          value={(e: DigiFormInputCustomEvent<Date>) => setToDate(e.target.value.toString())}
+        >
+          <SetCompanyContext.Provider
+            value={(e: DigiFormInputCustomEvent<string>) => setCompany(e.target.value.toString())}
+          >
             <SearchForm handleSubmit={handleSubmit} />
             <SearchResult jobSearchResponse={searchResults}></SearchResult>
             {showMoreButton && (
-            <DigiButton
-              afSize={ButtonSize.MEDIUM}
-              afVariation={ButtonVariation.PRIMARY}
-              afFullWidth={false}
-              className="alltitsuStyling"
-              onAfOnClick={(e: Event) => {
-                setOffset(offset + 10);
-                handleSubmit(e);
-              }}
-            >
-              Visa nästa tio träffar
-            </DigiButton>
+              <DigiButton
+                afSize={ButtonSize.MEDIUM}
+                afVariation={ButtonVariation.PRIMARY}
+                afFullWidth={false}
+                className="alltitsuStyling"
+                onAfOnClick={(e: Event) => {
+                  setOffset(offset + 10);
+                  handleSubmit(e);
+                }}
+              >
+                Visa nästa tio träffar
+              </DigiButton>
             )}
           </SetCompanyContext.Provider>
         </SetToDateContext.Provider>
