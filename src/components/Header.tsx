@@ -19,7 +19,7 @@ import '../styles/Header.scss';
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const isBreakpoint = useMediaQuery(1000);
+  const isBreakpoint = useMediaQuery(1020);
 
   const mobileNav = (
     <DigiNavigationSidebarButton afText="Meny" onClick={() => setMenuOpen(!menuOpen)}>
