@@ -13,8 +13,9 @@ import {
 } from '@digi/arbetsformedlingen';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Alltitsu.scss';
 import { useMediaQuery } from '../hooks/useMediaQuery';
+import '../styles/Alltitsu.scss';
+import '../styles/Header.scss';
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -105,7 +106,7 @@ export const Header = () => {
     <>
       <HeaderWrapper>
         <Link to="/">
-          <img src={logo} alt="Alltisu logo." width={100} height={100} />
+          <img className="logo" src={logo} alt="Alltisu logo." width={100} height={100} />
         </Link>
         {isBreakpoint ? mobileNav : desktopNav}
       </HeaderWrapper>

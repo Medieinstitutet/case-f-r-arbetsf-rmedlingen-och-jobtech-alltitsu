@@ -1,4 +1,4 @@
-import './Footer.scss';
+import '../styles/Footer.scss';
 import { FooterWrapper } from './styled/Wrappers';
 
 export const Footer = () => {

@@ -21,18 +21,6 @@ export const SearchPage = () => {
     hits: [],
   });
 
-  const handleFromDateChange = (e: DigiFormInputCustomEvent<Date>) => {
-    setFromDate(e.target.value.toString());
-  };
-
-  const handleToDateChange = (e: DigiFormInputCustomEvent<Date>) => {
-    setToDate(e.target.value.toString());
-  };
-
-  const handleCompanyChange = (e: DigiFormInputCustomEvent<string>) => {
-    setCompany(e.target.value.toString());
-  };
-
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
 
@@ -48,24 +36,30 @@ export const SearchPage = () => {
 
   return (
     <div>
-      <SetFromDateContext.Provider value={handleFromDateChange as () => void}>
-        <SetToDateContext.Provider value={handleToDateChange as () => void}>
-          <SetCompanyContext.Provider value={handleCompanyChange as () => void}>
+      <SetFromDateContext.Provider
+        value={(e: DigiFormInputCustomEvent<Date>) => setFromDate(e.target.value.toString())}
+      >
+        <SetToDateContext.Provider
+          value={(e: DigiFormInputCustomEvent<Date>) => setToDate(e.target.value.toString())}
+        >
+          <SetCompanyContext.Provider
+            value={(e: DigiFormInputCustomEvent<string>) => setCompany(e.target.value.toString())}
+          >
             <SearchForm handleSubmit={handleSubmit} />
             <SearchResult jobSearchResponse={searchResults}></SearchResult>
             {showMoreButton && (
-            <DigiButton
-              afSize={ButtonSize.MEDIUM}
-              afVariation={ButtonVariation.PRIMARY}
-              afFullWidth={false}
-              className="alltitsuStyling"
-              onAfOnClick={(e: Event) => {
-                setOffset(offset + 10);
-                handleSubmit(e);
-              }}
-            >
-              Visa nästa tio träffar
-            </DigiButton>
+              <DigiButton
+                afSize={ButtonSize.MEDIUM}
+                afVariation={ButtonVariation.PRIMARY}
+                afFullWidth={false}
+                className="alltitsuStyling"
+                onAfOnClick={(e: Event) => {
+                  setOffset(offset + 10);
+                  handleSubmit(e);
+                }}
+              >
+                Visa nästa tio träffar
+              </DigiButton>
             )}
           </SetCompanyContext.Provider>
         </SetToDateContext.Provider>

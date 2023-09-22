@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import './SearchForm.scss';
-import '../colorvariables.scss';
-import './Alltitsu.scss';
+import '../styles/SearchForm.scss';
+import '../styles/colorvariables.scss';
+import '../styles/Alltitsu.scss';
 
 import { DigiButton, DigiFormInput } from '@digi/arbetsformedlingen-react';
 import {

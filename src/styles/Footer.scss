@@ -1,4 +1,4 @@
-@import '../colorvariables.scss';
+@import './colorvariables.scss';
 
 .footer-left {
   display: flex;
@@ -89,7 +89,7 @@
   }
 }
 
-@media (min-width: 700px) {
+@media screen and (min-width: 700px) {
   .wrapper,
   .footer-right,
   .footer-left {
