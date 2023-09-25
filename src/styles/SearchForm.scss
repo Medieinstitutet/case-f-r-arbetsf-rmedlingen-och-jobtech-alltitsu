@@ -3,9 +3,9 @@
 
 .searchForm {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: auto;
   color: $DarkColor;
   max-width: 500px;
   .formField {
@@ -43,13 +43,14 @@
 }
 
 @media screen and (min-width: 1020px) {
-  .formField {
+  .laptopView {
     display: flex;
-    flex-direction: row;
-    align-items: center;
   }
-
-  .formField:nth-child(3) {
-    flex-direction: column; 
+  .thirdInput {
+    input {
+      width: 100%;
+      margin-top: 1rem;
+      }
+        
+    }
   }
-}
