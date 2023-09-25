@@ -12,7 +12,7 @@ interface JobCardProps {
 
 export const JobCard: React.FC<JobCardProps> = ({ title, text, employer, id }) => {
   return (
-    <JobWrapper>
+    <JobWrapper className='jobCard'>
       <DigiTypography afVariation={TypographyVariation.SMALL}>
         <h4>{title}</h4>
         <p>{employer}</p>

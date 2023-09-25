@@ -13,7 +13,7 @@ const SearchResult: React.FC<SearchResultProps> = ({ jobSearchResponse }) => {
   } else {
 
   return (
-    <div>
+    <div className='jobCardResponse'>
       {jobSearchResponse.hits.map((hit) => (
         <JobCard
           key={hit.id}

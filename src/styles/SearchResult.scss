@@ -1,4 +1,11 @@
 @import './colorvariables.scss';
+.jobCardResponse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .noResponse {
     display: flex;
     font-size: 1.5rem;
