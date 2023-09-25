@@ -19,7 +19,7 @@ export const JobCard: React.FC<JobCardProps> = ({ title, text, employer, id }) =
         <p className="jobDescription">{text}</p>
       </DigiTypography>
       <DigiLinkExternal
-        afHref={`/${id}`}
+        afHref={`/ad/${id}`}
         afTarget="_blank"
         afVariation={LinkVariation.SMALL}
         className="alltitsuStyling"

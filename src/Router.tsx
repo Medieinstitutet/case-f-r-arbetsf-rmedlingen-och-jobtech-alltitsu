@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: '/:id',
+        path: '/ad/:id',
         element: <Ad />,
       },
     ],

@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { getSingleAd } from '../services/jobSearch';
 import { ISingleAd } from '../models/ISingleAd';
 import { AdWrapper, DetailsWrapper } from './styled/Wrappers';
 
 export const Ad = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [ad, setAd] = useState<ISingleAd>({
     id: '',
     external_id: '',
@@ -203,6 +204,9 @@ export const Ad = () => {
     const getAd = async () => {
       if (id !== undefined) {
         const result = await getSingleAd(id);
+        if (result.id === '') {
+          navigate('/error');
+        }
         console.log(result);
         setAd(result);
       }
