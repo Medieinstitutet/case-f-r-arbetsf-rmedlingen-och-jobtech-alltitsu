@@ -1,21 +1,13 @@
-import React, { useEffect, useState } from 'react';
 import { JobCard } from './JobCard';
 import { IJobSearchResponse } from '../models/IJobSearchResponse';
 import "../styles/SearchResult.scss";
 
 interface SearchResultProps {
   jobSearchResponse: IJobSearchResponse;
+  searchPerformed: boolean;
 }
 
-const SearchResult: React.FC<SearchResultProps> = ({ jobSearchResponse }) => {
-  const [searchPerformed, setSearchPerformed] = useState(false);
-
-  useEffect(() => {
-    if (jobSearchResponse) {
-      setSearchPerformed(true);
-      console.log(jobSearchResponse, "test");
-    }
-  }, [jobSearchResponse, searchPerformed]);
+const SearchResult: React.FC<SearchResultProps> = ({ jobSearchResponse, searchPerformed }) => {
 
   if (!searchPerformed) {
     return null;
