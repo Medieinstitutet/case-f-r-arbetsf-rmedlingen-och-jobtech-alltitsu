@@ -49,7 +49,7 @@ export function SearchForm({ handleSubmit, toDate, fromDate }: ISearchFormProps)
             ></DigiFormInput>
           </div>
         </div>
-        <div className="formField thirdInput">
+        <div className="formField" id="thirdInput">
           <DigiFormInput
             afLabel="Företag:"
             afVariation={FormInputVariation.MEDIUM}

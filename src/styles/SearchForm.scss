@@ -12,13 +12,13 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 1rem;
+    margin: 1rem 0;
     input {
       width: 20rem;
       box-shadow: 1px 1px $DarkColor;
       background-color: $FirstColor;
       border: 1px solid $DarkColor;
-      margin: 1rem;
+      margin: 1.5rem;
     }
     label {
       margin-left: 1rem;
@@ -43,14 +43,16 @@
 }
 
 @media screen and (min-width: 1020px) {
+  .searchForm {
+    max-width: 800px;
+  }
   .laptopView {
     display: flex;
   }
-  .thirdInput {
-    input {
-      width: 100%;
-      margin-top: 1rem;
-      }
-        
-    }
+
+  #thirdInput {
+    width: 100%;
+    display: block;
+    margin-top: 1rem;
   }
+}
