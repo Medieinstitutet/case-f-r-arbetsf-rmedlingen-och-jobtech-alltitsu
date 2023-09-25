@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: center;
   color: $DarkColor;
+  max-width: 500px;
   .formField {
     display: flex;
     flex-direction: column;
@@ -38,5 +39,17 @@
     align-items: center;
     width: 10rem;
     height: 3rem;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .formField {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .formField:nth-child(3) {
+    flex-direction: column; 
   }
 }
