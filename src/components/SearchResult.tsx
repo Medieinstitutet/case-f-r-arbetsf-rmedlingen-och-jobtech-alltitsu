@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { JobCard } from './JobCard';
 import { IJobSearchResponse } from '../models/IJobSearchResponse';
 import "../styles/SearchResult.scss";
@@ -8,10 +8,19 @@ interface SearchResultProps {
 }
 
 const SearchResult: React.FC<SearchResultProps> = ({ jobSearchResponse }) => {
-  if (jobSearchResponse.hits.length === 0) {
-    return <div className='noResponse'>Inga jobb annonserades under denna period</div>;
-  } else {
+  const [searchPerformed, setSearchPerformed] = useState(false);
 
+  useEffect(() => {
+    if (jobSearchResponse) {
+      setSearchPerformed(true);
+      console.log(jobSearchResponse, "test");
+    }
+  }, [jobSearchResponse, searchPerformed]);
+
+  if (!searchPerformed) {
+    return null;
+  } else {
+    
   return (
     <div>
       {jobSearchResponse.hits.map((hit) => (
@@ -23,9 +32,13 @@ const SearchResult: React.FC<SearchResultProps> = ({ jobSearchResponse }) => {
           employer={hit.employer.name}
         />
       ))}
+      {jobSearchResponse.hits.length === 0 && (
+        <div className='noResponse'>Inga jobb annonserades under denna period</div>
+      )}
     </div>
   );
 }
-};
+}
+
 
 export default SearchResult;
