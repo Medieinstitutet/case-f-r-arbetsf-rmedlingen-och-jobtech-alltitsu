@@ -21,18 +21,38 @@ export const SearchPage = () => {
     hits: [],
   });
 
-  const handleSubmit = async (e: Event) => {
-    e.preventDefault();
+  const fetchDataAndUpdateResults = async (newOffset: number) => {
+    const getHistoricalData = await getHistoricalJobs(fromDate, toDate, company, newOffset);
+    const updatedResults =
+      newOffset === 0
+        ? getHistoricalData
+        : {
+            total: { value: searchResults.total.value },
+            hits: [...searchResults.hits, ...getHistoricalData.hits],
+          };
 
-    const getHistoricalData = await getHistoricalJobs(fromDate, toDate, company, offset);
-    console.log(fromDate, toDate, company, offset);
-    console.log(getHistoricalData);
-    setSearchResults(getHistoricalData);
+    setSearchResults(updatedResults);
+
     if (getHistoricalData.hits.length > 0) {
       setShowMoreButton(true);
     } else {
       setShowMoreButton(false);
     }
+  };
+
+  console.log('resultat i listan' + searchResults.hits.length);
+  console.log('test' + searchResults.total.value);
+
+  const handleSubmit = async (e: Event) => {
+    e.preventDefault();
+    await fetchDataAndUpdateResults(0);
+  };
+
+  const handleShowMore = async (e: Event) => {
+    e.preventDefault();
+    const newOffset = offset + 10;
+    setOffset(newOffset);
+    await fetchDataAndUpdateResults(newOffset);
   };
 
   return (
@@ -55,8 +75,7 @@ export const SearchPage = () => {
                 afFullWidth={false}
                 className="alltitsuStyling"
                 onAfOnClick={(e: Event) => {
-                  setOffset(offset + 10);
-                  handleSubmit(e);
+                  handleShowMore(e);
                 }}
               >
                 Visa nästa tio träffar

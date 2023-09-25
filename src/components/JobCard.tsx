@@ -12,14 +12,14 @@ interface JobCardProps {
 
 export const JobCard: React.FC<JobCardProps> = ({ title, text, employer, id }) => {
   return (
-    <JobWrapper>
+    <JobWrapper className='jobCard'>
       <DigiTypography afVariation={TypographyVariation.SMALL}>
         <h4>{title}</h4>
         <p>{employer}</p>
         <p className="jobDescription">{text}</p>
       </DigiTypography>
       <DigiLinkExternal
-        afHref={`/${id}`}
+        afHref={`/ad/${id}`}
         afTarget="_blank"
         afVariation={LinkVariation.SMALL}
         className="alltitsuStyling"
