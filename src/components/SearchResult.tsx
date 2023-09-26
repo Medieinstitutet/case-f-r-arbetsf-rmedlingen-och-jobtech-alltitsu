@@ -15,6 +15,7 @@ const SearchResult: React.FC<SearchResultProps> = ({ jobSearchResponse, searchPe
     
   return (
     <div className='jobCardResponse'>
+      <h2 className="totalHits">Totalt antal träffar: {jobSearchResponse.total.value} st</h2>
       {jobSearchResponse.hits.map((hit) => (
         <JobCard
           key={hit.id}
