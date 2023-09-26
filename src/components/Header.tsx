@@ -1,4 +1,7 @@
 import {
+  DigiIconGlobe,
+  DigiIconHome,
+  DigiIconSearch,
   DigiNavigationSidebar,
   DigiNavigationSidebarButton,
   DigiNavigationVerticalMenu,
@@ -41,7 +44,9 @@ export const Header = () => {
                   afText="Hem"
                   afActive={true}
                   className="alltitsuStyling"
-                ></DigiNavigationVerticalMenuItem>
+                >
+                  <DigiIconHome slot="icon" />
+                </DigiNavigationVerticalMenuItem>
               </Link>
             </li>
             <li>
@@ -50,7 +55,9 @@ export const Header = () => {
                   afText="Sök"
                   afActive={true}
                   className="alltitsuStyling"
-                ></DigiNavigationVerticalMenuItem>
+                >
+                  <DigiIconSearch slot="icon" />
+                </DigiNavigationVerticalMenuItem>
               </Link>
             </li>
             <li>
@@ -59,7 +66,9 @@ export const Header = () => {
                   afText="Kontakt"
                   afActive={true}
                   className="alltitsuStyling"
-                ></DigiNavigationVerticalMenuItem>
+                >
+                  <DigiIconGlobe slot="icon" />
+                </DigiNavigationVerticalMenuItem>
               </Link>
             </li>
           </ul>
@@ -77,7 +86,9 @@ export const Header = () => {
               afText="Hem"
               afActive={true}
               className="alltitsuStyling"
-            ></DigiNavigationVerticalMenuItem>
+            >
+              <DigiIconHome slot="icon" />
+            </DigiNavigationVerticalMenuItem>
           </Link>
         </li>
         <li>
@@ -86,7 +97,9 @@ export const Header = () => {
               afText="Sök"
               afActive={true}
               className="alltitsuStyling"
-            ></DigiNavigationVerticalMenuItem>
+            >
+              <DigiIconSearch slot="icon" />
+            </DigiNavigationVerticalMenuItem>
           </Link>
         </li>
         <li>
@@ -95,7 +108,9 @@ export const Header = () => {
               afText="Kontakt"
               afActive={true}
               className="alltitsuStyling"
-            ></DigiNavigationVerticalMenuItem>
+            >
+              <DigiIconGlobe slot="icon" />
+            </DigiNavigationVerticalMenuItem>
           </Link>
         </li>
       </ul>
