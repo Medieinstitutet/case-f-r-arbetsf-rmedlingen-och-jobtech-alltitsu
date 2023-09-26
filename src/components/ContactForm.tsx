@@ -7,7 +7,7 @@ import {
   FormTextareaVariation,
 } from '@digi/arbetsformedlingen';
 import { DigiButton, DigiFormInput, DigiFormTextarea } from '@digi/arbetsformedlingen-react';
-import { ContactWrapper } from './styled/Wrappers';
+import { ContactWrapper, DetailsWrapper, MessageWrapper } from './styled/Wrappers';
 import { useState } from 'react';
 import { ButtonSize, ButtonVariation } from '@digi/arbetsformedlingen';
 import {
@@ -61,10 +61,10 @@ export const ContactForm = () => {
 
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
-    console.log('hej');
 
     if (!usernameError && !emailError && !messageError) {
       await submitForm(formData);
+      console.log('mejl skickat');
     } else {
       return;
     }
