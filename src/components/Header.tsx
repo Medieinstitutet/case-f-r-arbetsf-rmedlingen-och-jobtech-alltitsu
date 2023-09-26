@@ -14,15 +14,21 @@ import {
   NavigationSidebarVariation,
   NavigationVerticalMenuVariation,
 } from '@digi/arbetsformedlingen';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import '../styles/Alltitsu.scss';
 import '../styles/Header.scss';
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [endpoint, setEndpoint] = useState(window.location.pathname);
   const isBreakpoint = useMediaQuery(1020);
+  const location = useLocation();
+
+  useEffect(() => {
+    setEndpoint(window.location.pathname);
+  }, [location]);
 
   const mobileNav = (
     <DigiNavigationSidebarButton afText="Meny" onClick={() => setMenuOpen(!menuOpen)}>
@@ -42,7 +48,7 @@ export const Header = () => {
               <Link to="/">
                 <DigiNavigationVerticalMenuItem
                   afText="Hem"
-                  afActive={true}
+                  afActive={endpoint === '/' ? true : false}
                   className="alltitsuStyling"
                 >
                   <DigiIconHome slot="icon" />
@@ -53,7 +59,7 @@ export const Header = () => {
               <Link to="/search">
                 <DigiNavigationVerticalMenuItem
                   afText="Sök"
-                  afActive={true}
+                  afActive={endpoint === '/search' ? true : false}
                   className="alltitsuStyling"
                 >
                   <DigiIconSearch slot="icon" />
@@ -64,7 +70,7 @@ export const Header = () => {
               <Link to="/contact">
                 <DigiNavigationVerticalMenuItem
                   afText="Kontakt"
-                  afActive={true}
+                  afActive={endpoint === '/contact' ? true : false}
                   className="alltitsuStyling"
                 >
                   <DigiIconGlobe slot="icon" />
@@ -81,33 +87,35 @@ export const Header = () => {
     <DigiNavigationVerticalMenu afVariation={NavigationVerticalMenuVariation.PRIMARY}>
       <ul>
         <li>
-          <Link to={'/'}>
+          <Link to="/">
             <DigiNavigationVerticalMenuItem
               afText="Hem"
-              afActive={true}
               className="alltitsuStyling"
+              afActive={endpoint === '/' ? true : false}
             >
               <DigiIconHome slot="icon" />
             </DigiNavigationVerticalMenuItem>
           </Link>
         </li>
         <li>
-          <Link to={'/search'}>
+          <Link to="/search">
             <DigiNavigationVerticalMenuItem
+              afHref="/search"
               afText="Sök"
-              afActive={true}
               className="alltitsuStyling"
+              afActive={endpoint === '/search' ? true : false}
             >
               <DigiIconSearch slot="icon" />
             </DigiNavigationVerticalMenuItem>
           </Link>
         </li>
         <li>
-          <Link to={'/contact'}>
+          <Link to="/contact">
             <DigiNavigationVerticalMenuItem
+              afHref="/contact"
               afText="Kontakt"
-              afActive={true}
               className="alltitsuStyling"
+              afActive={endpoint === '/contact' ? true : false}
             >
               <DigiIconGlobe slot="icon" />
             </DigiNavigationVerticalMenuItem>
