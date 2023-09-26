@@ -84,3 +84,20 @@ export const DetailsWrapper = styled.div`
   border-radius: 10px;
   padding: 15px;
 `;
+
+export const MessageWrapper = styled.div`
+  background-color: #6ea4bf;
+  max-width: 500px;
+  margin: 6rem 2rem;
+  padding: 3rem;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #41337a;
+  box-shadow:
+    0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+    0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  @media (min-width: 500px) {
+    margin: auto;
+  }
+`;

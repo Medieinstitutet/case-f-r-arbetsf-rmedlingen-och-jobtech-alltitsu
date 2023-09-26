@@ -17,7 +17,11 @@ import {
 import submitForm from '../services/contactFormService';
 import { IContactForm } from '../models/IContactForm';
 
-export const ContactForm = () => {
+interface IProps {
+  setEmailSent: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const ContactForm = ({ setEmailSent }: IProps) => {
   const [formData, setFormData] = useState<IContactForm>({
     username: '',
     email: '',
@@ -61,10 +65,11 @@ export const ContactForm = () => {
 
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
-    console.log('hej');
 
     if (!usernameError && !emailError && !messageError) {
       await submitForm(formData);
+      console.log('mejl skickat');
+      setEmailSent(true);
     } else {
       return;
     }
