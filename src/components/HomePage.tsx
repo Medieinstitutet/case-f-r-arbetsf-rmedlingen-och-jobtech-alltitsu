@@ -1,7 +1,12 @@
+import { DigiTypography } from '@digi/arbetsformedlingen-react';
 import '../styles/HomePage.scss';
+import { TypographyVariation } from '@digi/arbetsformedlingen';
 
 export const HomePage = () => {
   return (
+    <DigiTypography
+    afVariation={TypographyVariation.SMALL}
+>
     <div className="homePage">
       <h1> Välkommen till Alltitsu</h1>
       <p className="punchLine">Utnyttja kraften i historisk jobbdata!</p>
@@ -48,5 +53,6 @@ export const HomePage = () => {
         organisationer möjlighet att fatta bättre datadrivna beslut.
       </p>
     </div>
+    </DigiTypography>
   );
 };
