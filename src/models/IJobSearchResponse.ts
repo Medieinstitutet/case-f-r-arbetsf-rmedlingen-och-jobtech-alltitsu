@@ -16,4 +16,9 @@ interface IJobAdSearchResult {
   occupation: {
     label: string;
   };
+  publication_date: string;
+  application_deadline: string;
+  workplace_address: {
+    municipality: string;
+  }
 }
