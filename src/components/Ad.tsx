@@ -235,7 +235,7 @@ export const Ad = () => {
          afVariation={TypographyVariation.SMALL}
       >
         <h4>Detaljer</h4>
-        <p>Var: {ad.workplace_address.municipality}</p>
+        <p>Ort: {ad.workplace_address.municipality}</p>
         <p>Villkor: {ad.description.conditions}</p>
         <p>Lönvillkor: {ad.salary_description}</p>
         <p>Erfarenhet krävs: {ad.experience_required ? 'Ja' : 'Nej'}</p>
