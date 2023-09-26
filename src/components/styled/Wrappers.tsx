@@ -42,6 +42,7 @@ export const ContactWrapper = styled.div`
 
 export const FooterWrapper = styled.footer`
   background-color: #6ea4bf;
+  color: #331e36;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
