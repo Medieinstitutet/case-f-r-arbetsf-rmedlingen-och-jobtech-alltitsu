@@ -14,9 +14,12 @@
     span {
         font-weight: 700;
     }
+    #lastApplicationDate {
+        margin-bottom: 1rem;
+    }
 }
 
-.jobDescription {
+#jobDescription {
     padding: 20px 0;
     max-width: 500px;
     white-space: nowrap;

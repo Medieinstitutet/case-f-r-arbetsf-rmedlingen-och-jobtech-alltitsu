@@ -25,7 +25,7 @@ export const JobCard: React.FC<JobCardProps> = ({ title, employer, id, publicati
         <h5>{employer}</h5>
         <p><span>Publicerades:</span> {formattedDate}</p>
         <p><span>Ort:</span> {municipality}</p>
-        <p><span>Sista dag för ansökan: </span>{formattedDate2}</p>
+        <p id='lastApplicationDate'><span>Sista dag för ansökan: </span>{formattedDate2}</p>
       </DigiTypography>
       <DigiLinkExternal
         afHref={`/ad/${id}`}
