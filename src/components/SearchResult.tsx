@@ -21,7 +21,9 @@ const SearchResult: React.FC<SearchResultProps> = ({ jobSearchResponse, searchPe
           key={hit.id}
           id={hit.id}
           title={hit.occupation.label}
-          text={hit.description.text}
+          publication_date={hit.publication_date}
+          municipality={hit.workplace_address.municipality}
+          application_deadline={hit.application_deadline}
           employer={hit.employer.name}
         />
       ))}
