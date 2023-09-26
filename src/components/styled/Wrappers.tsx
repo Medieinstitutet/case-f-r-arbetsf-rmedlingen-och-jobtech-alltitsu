@@ -36,7 +36,7 @@ export const ContactWrapper = styled.div`
 
   @media (min-width: 700px) {
     margin: auto;
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
 `;
 
