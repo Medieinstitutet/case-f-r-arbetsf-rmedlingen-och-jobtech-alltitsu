@@ -27,27 +27,29 @@ export function SearchForm({ handleSubmit, toDate, fromDate }: ISearchFormProps)
   return (
     <div className="searchForm">
       <form>
-        <div className="formField">
-          <DigiFormInput
-            afValue={fromDate}
-            afLabel="Från:"
-            afVariation={FormInputVariation.MEDIUM}
-            afType={FormInputType.DATE}
-            afValidation={FormInputValidation.NEUTRAL}
-            onAfOnInput={setFromDate}
-          ></DigiFormInput>
+        <div className="laptopView">
+          <div className="formField">
+            <DigiFormInput
+              afValue={fromDate}
+              afLabel="Från:"
+              afVariation={FormInputVariation.MEDIUM}
+              afType={FormInputType.DATE}
+              afValidation={FormInputValidation.NEUTRAL}
+              onAfOnInput={setFromDate}
+            ></DigiFormInput>
+          </div>
+          <div className="formField">
+            <DigiFormInput
+              afValue={toDate}
+              afLabel="Till:"
+              afVariation={FormInputVariation.MEDIUM}
+              afType={FormInputType.DATE}
+              afValidation={FormInputValidation.NEUTRAL}
+              onAfOnInput={setToDate}
+            ></DigiFormInput>
+          </div>
         </div>
-        <div className="formField">
-          <DigiFormInput
-            afValue={toDate}
-            afLabel="Till:"
-            afVariation={FormInputVariation.MEDIUM}
-            afType={FormInputType.DATE}
-            afValidation={FormInputValidation.NEUTRAL}
-            onAfOnInput={setToDate}
-          ></DigiFormInput>
-        </div>
-        <div className="formField">
+        <div className="formField" id="thirdInput">
           <DigiFormInput
             afLabel="Företag:"
             afVariation={FormInputVariation.MEDIUM}
