@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { SetCompanyContext, SetFromDateContext, SetToDateContext } from '../context/SearchContext';
 import { DigiFormInputCustomEvent } from '@digi/arbetsformedlingen/dist/types/components';
 import { getHistoricalJobs } from '../services/jobSearch';
+import "../styles/SearchPage.scss"
 
 export const SearchPage = () => {
   const [fromDate, setFromDate] = useState('2016-01-01');
@@ -76,6 +77,7 @@ export const SearchPage = () => {
                 afVariation={ButtonVariation.PRIMARY}
                 afFullWidth={false}
                 className="alltitsuStyling"
+                id='showMoreButton'
                 onAfOnClick={(e: Event) => {
                   handleShowMore(e);
                 }}
