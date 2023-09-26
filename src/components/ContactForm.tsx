@@ -7,7 +7,7 @@ import {
   FormTextareaVariation,
 } from '@digi/arbetsformedlingen';
 import { DigiButton, DigiFormInput, DigiFormTextarea } from '@digi/arbetsformedlingen-react';
-import { ContactWrapper, DetailsWrapper, MessageWrapper } from './styled/Wrappers';
+import { ContactWrapper } from './styled/Wrappers';
 import { useState } from 'react';
 import { ButtonSize, ButtonVariation } from '@digi/arbetsformedlingen';
 import {
@@ -17,7 +17,11 @@ import {
 import submitForm from '../services/contactFormService';
 import { IContactForm } from '../models/IContactForm';
 
-export const ContactForm = () => {
+interface IProps {
+  setEmailSent: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const ContactForm = ({ setEmailSent }: IProps) => {
   const [formData, setFormData] = useState<IContactForm>({
     username: '',
     email: '',
@@ -65,6 +69,7 @@ export const ContactForm = () => {
     if (!usernameError && !emailError && !messageError) {
       await submitForm(formData);
       console.log('mejl skickat');
+      setEmailSent(true);
     } else {
       return;
     }
