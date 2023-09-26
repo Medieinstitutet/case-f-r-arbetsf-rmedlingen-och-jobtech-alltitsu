@@ -14,7 +14,7 @@ export const SearchPage = () => {
   const [company, setCompany] = useState('');
   const [offset, setOffset] = useState(0);
   const [showMoreButton, setShowMoreButton] = useState(false);
-  const[searchPerformed, setSearchPerformed] = useState(false);
+  const [searchPerformed, setSearchPerformed] = useState(false);
   const [searchResults, setSearchResults] = useState<IJobSearchResponse>({
     total: {
       value: 0,
@@ -47,7 +47,7 @@ export const SearchPage = () => {
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
     await fetchDataAndUpdateResults(0);
-    setSearchPerformed(true)
+    setSearchPerformed(true);
   };
 
   const handleShowMore = async (e: Event) => {
@@ -69,7 +69,10 @@ export const SearchPage = () => {
             value={(e: DigiFormInputCustomEvent<string>) => setCompany(e.target.value.toString())}
           >
             <SearchForm handleSubmit={handleSubmit} toDate={toDate} fromDate={fromDate} />
-            <SearchResult jobSearchResponse={searchResults} searchPerformed={searchPerformed}></SearchResult>
+            <SearchResult
+              jobSearchResponse={searchResults}
+              searchPerformed={searchPerformed}
+            ></SearchResult>
             {showMoreButton && (
               <DigiButton
                 afSize={ButtonSize.MEDIUM}
