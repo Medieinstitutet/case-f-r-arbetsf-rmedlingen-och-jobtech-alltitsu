@@ -58,6 +58,7 @@ export const FooterWrapper = styled.footer`
   @media (min-width: 700px) {
     flex-direction: row;
     align-items: flex-start;
+    padding: 20px 10px 5px;
   }
 `;
 
