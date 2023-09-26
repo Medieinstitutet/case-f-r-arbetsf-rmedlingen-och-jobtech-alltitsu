@@ -1,6 +1,8 @@
 @import './colorvariables.scss';
 
-.contact-btn {
+#contact-btn {
   display: flex;
   justify-content: center;
+  --digi--color--background--inverted-6: #c2efeb;
+  --digi--button--color--border--primary--default: #331e36;
 }
