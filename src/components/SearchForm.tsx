@@ -26,7 +26,7 @@ export function SearchForm({ handleSubmit, toDate, fromDate }: ISearchFormProps)
 
   return (
     <div className="searchForm">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="laptopView">
           <div className="formField">
             <DigiFormInput
