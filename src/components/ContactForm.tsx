@@ -65,7 +65,6 @@ export const ContactForm = ({ setEmailSent }: IProps) => {
 
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
-
     if (!usernameError && !emailError && !messageError) {
       await submitForm(formData);
       console.log('mejl skickat');
@@ -160,6 +159,7 @@ export const ContactForm = ({ setEmailSent }: IProps) => {
             afVariation={ButtonVariation.PRIMARY}
             afFullWidth={false}
             className="alltitsuStyling"
+            id="contact-btn"
             onAfOnClick={handleSubmit}
           >
             Skicka
