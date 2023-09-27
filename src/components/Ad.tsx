@@ -5,6 +5,7 @@ import { ISingleAd } from '../models/ISingleAd';
 import { AdWrapper, DetailsWrapper } from './styled/Wrappers';
 import { TypographyVariation } from '@digi/arbetsformedlingen';
 import { DigiTypography } from '@digi/arbetsformedlingen-react';
+import '../styles/Ad.scss';
 
 export const Ad = () => {
   const { id } = useParams();
@@ -221,35 +222,29 @@ export const Ad = () => {
   return (
     <AdWrapper>
       <DetailsWrapper>
-      <DigiTypography
-         afVariation={TypographyVariation.SMALL}
-      >
-        <img src={ad.logo_url} alt="" />
-        <h4>{ad.employer.name}</h4>
-        <p>Org. nr: {ad.employer.organization_number}</p>
+        <DigiTypography afVariation={TypographyVariation.SMALL}>
+          <img src={ad.logo_url} alt="" />
+          <h4>{ad.employer.name}</h4>
+          <p>Org. nr: {ad.employer.organization_number}</p>
         </DigiTypography>
       </DetailsWrapper>
       <DetailsWrapper>
-      <DigiTypography
-         afVariation={TypographyVariation.SMALL}
-      >
-        <h4>Detaljer</h4>
-        <p>Ort: {ad.workplace_address.municipality}</p>
-        <p>Villkor: {ad.description.conditions}</p>
-        <p>Lönvillkor: {ad.salary_description}</p>
-        <p>Erfarenhet krävs: {ad.experience_required ? 'Ja' : 'Nej'}</p>
-        <p>Körkort krävs: {ad.driving_license_required ? 'Ja' : 'Nej'}</p>
+        <DigiTypography afVariation={TypographyVariation.SMALL}>
+          <h4>Detaljer</h4>
+          <p>Ort: {ad.workplace_address.municipality}</p>
+          <p>Villkor: {ad.description.conditions}</p>
+          <p>Lönvillkor: {ad.salary_description}</p>
+          <p>Erfarenhet krävs: {ad.experience_required ? 'Ja' : 'Nej'}</p>
+          <p>Körkort krävs: {ad.driving_license_required ? 'Ja' : 'Nej'}</p>
         </DigiTypography>
       </DetailsWrapper>
-      <DigiTypography
-         afVariation={TypographyVariation.LARGE}
-      >
-      <section>
-        <span>Publicerad: {new Date(ad.publication_date).toLocaleString()}</span>
-        <span>Deadline: {new Date(ad.application_deadline).toLocaleString()}</span>
-        <h4>{ad.headline}</h4>
-        <p>{ad.description.text}</p>
-      </section>
+      <DigiTypography afVariation={TypographyVariation.LARGE}>
+        <section className="singleAdText">
+          <span>Publicerad: {new Date(ad.publication_date).toLocaleString()}</span>
+          <span>Deadline: {new Date(ad.application_deadline).toLocaleString()}</span>
+          <h4>{ad.headline}</h4>
+          <p>{ad.description.text}</p>
+        </section>
       </DigiTypography>
     </AdWrapper>
   );
