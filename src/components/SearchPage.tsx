@@ -10,7 +10,6 @@ import {
 } from '@digi/arbetsformedlingen/dist/types/components';
 import { getHistoricalJobs } from '../services/jobSearch';
 import '../styles/SearchPage.scss';
-import '../styles/Alltitsu.scss';
 
 export const SearchPage = () => {
   const [fromDate, setFromDate] = useState('2016-01-01');
@@ -27,7 +26,6 @@ export const SearchPage = () => {
   });
 
   const fetchDataAndUpdateResults = async (offset: number) => {
-    console.log(offset);
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     const getHistoricalData = await getHistoricalJobs(fromDate, toDate, company, offset);
@@ -41,8 +39,6 @@ export const SearchPage = () => {
     }
   };
 
-  console.log('resultat i listan' + searchResults.hits.length);
-  console.log('test' + searchResults.total.value);
 
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
@@ -54,7 +50,6 @@ export const SearchPage = () => {
     e.preventDefault();
     const firstoffset = e.detail * 10;
     const offset = firstoffset - 10;
-    console.log(offset);
 
     await fetchDataAndUpdateResults(offset);
   };
@@ -81,7 +76,6 @@ export const SearchPage = () => {
                 onAfOnPageChange={(e) => {
                   handleShowMore(e);
                 }}
-                afId="paginationStyling"
               ></DigiNavigationPagination>
             )}
           </SetCompanyContext.Provider>

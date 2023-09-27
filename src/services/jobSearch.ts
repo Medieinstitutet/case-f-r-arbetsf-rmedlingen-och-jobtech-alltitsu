@@ -15,8 +15,6 @@ export const getHistoricalJobs = async (
 
     const jobsResponse = await get<IJobSearchResponse>(apiUrl);
 
-    console.log(jobsResponse);
-
     return jobsResponse;
   } catch (error) {
     console.error('Error fetching jobs:', error);

@@ -11,7 +11,6 @@ const submitForm = async (formData: IContactForm) => {
         message: formData.message,
       },
     );
-    console.log(response);
     return response;
   } catch (error) {
     console.error(error);

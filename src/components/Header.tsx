@@ -40,7 +40,6 @@ export const Header = () => {
         afVariation={NavigationSidebarVariation.OVER}
         afCloseButtonText="Stäng"
         onAfOnClose={() => setMenuOpen(!menuOpen)}
-        className="alltitsuStyling"
       >
         <DigiNavigationVerticalMenu afVariation={NavigationVerticalMenuVariation.PRIMARY}>
           <ul>
@@ -49,7 +48,6 @@ export const Header = () => {
                 <DigiNavigationVerticalMenuItem
                   afText="Hem"
                   afActive={endpoint === '/' ? true : false}
-                  className="alltitsuStyling"
                 >
                   <DigiIconHome slot="icon" />
                 </DigiNavigationVerticalMenuItem>
@@ -60,7 +58,6 @@ export const Header = () => {
                 <DigiNavigationVerticalMenuItem
                   afText="Sök"
                   afActive={endpoint === '/search' ? true : false}
-                  className="alltitsuStyling"
                 >
                   <DigiIconSearch slot="icon" />
                 </DigiNavigationVerticalMenuItem>
@@ -71,7 +68,6 @@ export const Header = () => {
                 <DigiNavigationVerticalMenuItem
                   afText="Kontakt"
                   afActive={endpoint === '/contact' ? true : false}
-                  className="alltitsuStyling"
                 >
                   <DigiIconGlobe slot="icon" />
                 </DigiNavigationVerticalMenuItem>
@@ -90,7 +86,6 @@ export const Header = () => {
           <Link to="/">
             <DigiNavigationVerticalMenuItem
               afText="Hem"
-              className="alltitsuStyling"
               afActive={endpoint === '/' ? true : false}
             >
               <DigiIconHome slot="icon" />
@@ -102,7 +97,6 @@ export const Header = () => {
             <DigiNavigationVerticalMenuItem
               afHref="/search"
               afText="Sök"
-              className="alltitsuStyling"
               afActive={endpoint === '/search' ? true : false}
             >
               <DigiIconSearch slot="icon" />
@@ -114,7 +108,7 @@ export const Header = () => {
             <DigiNavigationVerticalMenuItem
               afHref="/contact"
               afText="Kontakt"
-              className="alltitsuStyling"
+
               afActive={endpoint === '/contact' ? true : false}
             >
               <DigiIconGlobe slot="icon" />

@@ -209,7 +209,6 @@ export const Ad = () => {
         if (result.id === '') {
           navigate('/error');
         }
-        console.log(result);
         setAd(result);
       }
     };
