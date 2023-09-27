@@ -7,18 +7,18 @@ Arbetet gjordes som ett grupparbete och vår grupp bestod av @arnetzlinder, @tit
 
 
 ## Starta projekt
-Klona repot\
+Klona repot \
 npm i \
-npm run dev\
+npm run dev
 
 ## Tech stack
-React\
-React router dom\
-Styled components\
-Vite\
-Sass\
-Typescript\
-Eslint\
-Prettier\
-Axios\
-GH pages\
+React \
+React router dom \
+Styled components \
+Vite \
+Sass \
+Typescript \
+Eslint \
+Prettier \
+Axios \
+GH pages
