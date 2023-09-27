@@ -65,8 +65,10 @@ export const ContactForm = ({ setEmailSent }: IProps) => {
 
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
-
-    if (!usernameError && !emailError && !messageError) {
+    if (formData.email === '' || formData.username === '' || formData.message === '') {
+      alert('Var god fyll i hela formuläret');
+      return;
+    } else if (!usernameError && !emailError && !messageError) {
       await submitForm(formData);
       console.log('mejl skickat');
       setEmailSent(true);
