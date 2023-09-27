@@ -1,0 +1,164 @@
+@import './colorvariables.scss';
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  align-items: center;
+  text-align: center;
+
+  h3 {
+    font-size: 1.2rem;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+
+  .footer-about {
+    padding: 0 60px;
+    font-size: 0.8rem;
+  }
+
+  .footer-company-name {
+    font-size: 1rem;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-center {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+
+  i {
+    background-color: $DarkColor;
+    color: #ffffff;
+    font-size: 10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 27px;
+    margin: 10px 15px;
+    vertical-align: middle;
+  }
+
+  .contact-info {
+    display: flex;
+    align-items: flex-start;
+    font-size: 0.8rem;
+
+    a {
+      color: $DarkColor;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: $FirstColor;
+    }
+  }
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  h3 {
+    font-size: 1.2rem;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+
+  .footer-icons {
+    a {
+      margin: auto;
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      background-color: $DarkColor;
+      border-radius: 2px;
+
+      font-size: 0.8rem;
+      color: #ffffff;
+      text-align: center;
+      line-height: 30px;
+      margin: 0.3rem;
+      margin-top: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .wrapper,
+  .footer-right,
+  .footer-left {
+    width: 30%;
+  }
+
+  .footer-left,
+  .footer-right {
+    margin-top: 0.5rem;
+  }
+
+  .footer-left {
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    .footer-about {
+      padding: 0 40px;
+      font-size: 1rem;
+    }
+
+    .footer-company-name {
+      font-size: 1.2rem;
+      margin-block-start: 0;
+      margin-block-end: 0;
+    }
+  }
+
+  .footer-center {
+    i {
+      font-size: 15px;
+      width: 35px;
+      height: 35px;
+      line-height: 34px;
+    }
+
+    .contact-info {
+      font-size: 1rem;
+    }
+  }
+
+  .footer-right {
+    h3 {
+      font-size: 1.5rem;
+    }
+    .footer-icons {
+      a {
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+
+        font-size: 1.1rem;
+        color: #ffffff;
+        text-align: center;
+        line-height: 38px;
+        margin: 0.3rem;
+        margin-top: 1rem;
+      }
+
+      a:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}

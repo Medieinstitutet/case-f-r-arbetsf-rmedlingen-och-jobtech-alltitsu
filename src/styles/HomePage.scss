@@ -1,0 +1,58 @@
+@import './colorvariables.scss';
+
+body {
+  background-color: $FirstColor;
+}
+
+.homePage {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 1rem;
+
+  h1 {
+    color: $DarkColor;
+    font-size: 2rem;
+  }
+
+  .punchLine {
+    font-style: italic;
+  }
+
+  p {
+    color: $DarkColor;
+    font-size: 1.3rem;
+    padding: 10px;
+    line-height: 2rem;
+  }
+
+  li {
+    font-size: 1.3rem;
+    padding: 10px;
+  }
+
+  span {
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    font-style: italic;
+    margin: 1rem;
+  }
+
+  .about {
+    font-style: italic;
+    line-height: 2rem;
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .homePage {
+    max-width: 800px;
+  }
+}
