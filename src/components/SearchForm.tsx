@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { FormEventHandler, useContext } from 'react';
 import '../styles/SearchForm.scss';
 import '../styles/colorvariables.scss';
 import '../styles/Alltitsu.scss';
@@ -26,7 +26,7 @@ export function SearchForm({ handleSubmit, toDate, fromDate }: ISearchFormProps)
 
   return (
     <div className="searchForm">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit as unknown as FormEventHandler<HTMLFormElement>}>
         <div className="laptopView">
           <div className="formField">
             <DigiFormInput
