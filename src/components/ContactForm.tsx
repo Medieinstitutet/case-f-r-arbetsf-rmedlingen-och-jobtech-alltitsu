@@ -162,6 +162,7 @@ export const ContactForm = ({ setEmailSent }: IProps) => {
             afVariation={ButtonVariation.PRIMARY}
             afFullWidth={false}
             className="alltitsuStyling"
+            id="contact-btn"
             onAfOnClick={handleSubmit}
           >
             Skicka
