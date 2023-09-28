@@ -18,7 +18,7 @@ export const HomePage = () => {
       <h2>Varför Alltitsu?</h2>
       <p>
         På Alltitsu förstår vi vikten av datadrivna beslut i dagens konkurrensutsatta arbetsmarknad.
-        Vår plattform ger dig möjlighet att
+        Vår plattform ger dig möjlighet att:
       </p>
       <ul>
         <li>
@@ -34,7 +34,7 @@ export const HomePage = () => {
           Förbättra din strategi för jobbsökning baserat på datadrivna insikter.
         </li>
         <li>
-          <span>Förbättra Arbetskraftsplanering:</span>
+          <span>Förbättra Arbetskraftsplanering: </span>
           Hjälp företag att fatta beslut baserade på data när det gäller talanganskaffning och
           resursfördelning.
         </li>
@@ -42,13 +42,11 @@ export const HomePage = () => {
       <h2> Hur fungerar Alltitsu?</h2>
       <p>
         {' '}
-        Här kan du söka på arbetsgivare och datum för att hämta historisk jobbdata. Resultaten
-        visualiseras också i ett linjediagram för att ge dig bättre överblick
+        Här kan du söka på arbetsgivare och datum för att hämta historisk jobbdata. Välj mellan vilka datum du vill söka och vilken arbetsgivare så får du fram resultaten och kan klicka dig in på enskilda annonser.
       </p>
       <h3> Om Alltitsu</h3>
       <p className="about">
-        Alltitsu är ett engagerat team av dataentusiaster med uppdraget att revolutionera hur
-        människor närmar sig jobbsökningar och arbetskraftsplanering. Med en passion för data och en
+        Med en passion för data och en
         förpliktelse till användarcentrerad design har vi skapat en plattform som ger individer och
         organisationer möjlighet att fatta bättre datadrivna beslut.
       </p>
