@@ -6,7 +6,7 @@ export interface ISingleAd {
   logo_url: string;
   headline: string;
   application_deadline: string;
-  number_of_vacancies: number;
+
   description: {
     text: string;
     text_formatted: string;
@@ -15,27 +15,9 @@ export interface ISingleAd {
     requirements: string;
     conditions: string;
   };
-  employment_type: {
-    concept_id: string;
-    label: string;
-    legacy_ams_taxonomy_id: string;
-  };
-  salary_type: {
-    concept_id: string;
-    label: string;
-    legacy_ams_taxonomy_id: string;
-  };
+
   salary_description: string;
-  duration: {
-    concept_id: string;
-    label: string;
-    legacy_ams_taxonomy_id: string;
-  };
-  working_hours_type: {
-    concept_id: string;
-    label: string;
-    legacy_ams_taxonomy_id: string;
-  };
+
   employer: {
     phone_number: string;
     email: string;
@@ -44,39 +26,11 @@ export interface ISingleAd {
     name: string;
     workplace: string;
   };
-  application_details: {
-    information: string;
-    reference: string;
-    email: string;
-    via_af: boolean;
-    url: string;
-    other: string;
-  };
+
   experience_required: boolean;
-  access_to_own_car: boolean;
+
   driving_license_required: boolean;
-  driving_license: [
-    {
-      concept_id: string;
-      label: string;
-      legacy_ams_taxonomy_id: string;
-    },
-  ];
-  occupation: {
-    concept_id: string;
-    label: string;
-    legacy_ams_taxonomy_id: string;
-  };
-  occupation_group: {
-    concept_id: string;
-    label: string;
-    legacy_ams_taxonomy_id: string;
-  };
-  occupation_field: {
-    concept_id: string;
-    label: string;
-    legacy_ams_taxonomy_id: string;
-  };
+
   workplace_address: {
     municipality: string;
     municipality_code: string;
@@ -92,101 +46,7 @@ export interface ISingleAd {
     city: string;
     coordinates: [number];
   };
-  must_have: {
-    skills: [
-      {
-        concept_id: string;
-        label: string;
-        legacy_ams_taxonomy_id: string;
-        weight: number;
-      },
-    ];
-    languages: [
-      {
-        concept_id: string;
-        label: string;
-        legacy_ams_taxonomy_id: string;
-        weight: number;
-      },
-    ];
-    work_experiences: [
-      {
-        concept_id: string;
-        label: string;
-        legacy_ams_taxonomy_id: string;
-        weight: number;
-      },
-    ];
-    education: [
-      {
-        concept_id: string;
-        label: string;
-        legacy_ams_taxonomy_id: string;
-        weight: number;
-      },
-    ];
-    education_level: [
-      {
-        concept_id: string;
-        label: string;
-        legacy_ams_taxonomy_id: string;
-        weight: number;
-      },
-    ];
-  };
-  nice_to_have: {
-    skills: [
-      {
-        concept_id: string;
-        label: string;
-        legacy_ams_taxonomy_id: string;
-        weight: number;
-      },
-    ];
-    languages: [
-      {
-        concept_id: string;
-        label: string;
-        legacy_ams_taxonomy_id: string;
-        weight: number;
-      },
-    ];
-    work_experiences: [
-      {
-        concept_id: string;
-        label: string;
-        legacy_ams_taxonomy_id: string;
-        weight: number;
-      },
-    ];
-    education: [
-      {
-        concept_id: string;
-        label: string;
-        legacy_ams_taxonomy_id: string;
-        weight: number;
-      },
-    ];
-    education_level: [
-      {
-        concept_id: string;
-        label: string;
-        legacy_ams_taxonomy_id: string;
-        weight: number;
-      },
-    ];
-  };
-  application_contacts: {
-    name: string;
-    description: string;
-    email: string;
-    telephone: string;
-    contact_type: string;
-  };
+
   publication_date: string;
   last_publication_date: string;
-  removed: boolean;
-  removed_date: string;
-  source_type: string;
-  timestamp: number;
 }
