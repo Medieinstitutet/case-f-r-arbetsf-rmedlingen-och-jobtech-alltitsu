@@ -1,5 +1,6 @@
 {
   "name": "fed22d-af-case-template",
+  "homepage": "https://medieinstitutet.github.io/case-f-r-arbetsf-rmedlingen-och-jobtech-alltitsu/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,9 +14,11 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@digi/arbetsformedlingen": "^20.0.1",
-    "@digi/arbetsformedlingen-react": "^20.0.1",
+    "@digi/arbetsformedlingen": "^20.0.5-beta.0",
+    "@digi/arbetsformedlingen-react": "^20.0.5-beta.0",
     "axios": "^1.5.0",
+    "i": "^0.3.7",
+    "npm": "^10.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
