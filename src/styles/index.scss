@@ -40,7 +40,7 @@ body {
 
 main {
   display: block;
-  padding-bottom: 300px;
+  padding-bottom: 430px;
 }
 
 /**
@@ -359,4 +359,16 @@ template {
 
 [hidden] {
   display: none;
+}
+
+@media screen and (min-width: 700px) {
+  main {
+    padding-bottom: 345px;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  main {
+    padding-bottom: 300px;
+  }
 }
