@@ -23,7 +23,6 @@ export const useMediaQuery = (width: number) => {
 
     return () => media.removeEventListener('change', updateTarget);
   }, [updateTarget, width]);
-  console.log('CHANGED');
 
   return targetReached;
 };

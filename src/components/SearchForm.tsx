@@ -1,7 +1,6 @@
 import { FormEventHandler, useContext } from 'react';
 import '../styles/SearchForm.scss';
 import '../styles/colorvariables.scss';
-import '../styles/Alltitsu.scss';
 
 import { DigiButton, DigiFormInput } from '@digi/arbetsformedlingen-react';
 import {
@@ -63,7 +62,6 @@ export function SearchForm({ handleSubmit, toDate, fromDate }: ISearchFormProps)
             afSize={ButtonSize.LARGE}
             afVariation={ButtonVariation.PRIMARY}
             afFullWidth={false}
-            className="alltitsuStyling"
             onAfOnClick={handleSubmit}
           >
             Sök

@@ -80,8 +80,13 @@ export const AdWrapper = styled.div`
 `;
 
 export const DetailsWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid black;
   width: 45%;
+  max-width: 400px;
+  height: 350px;
   border-radius: 10px;
   padding: 15px;
 `;

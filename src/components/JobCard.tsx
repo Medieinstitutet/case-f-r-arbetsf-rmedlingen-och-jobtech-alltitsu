@@ -31,7 +31,6 @@ export const JobCard: React.FC<JobCardProps> = ({ title, employer, id, publicati
         afHref={`/ad/${id}`}
         afTarget="_blank"
         afVariation={LinkVariation.SMALL}
-        className="alltitsuStyling"
       >
         Gå till annons
       </DigiLinkExternal>

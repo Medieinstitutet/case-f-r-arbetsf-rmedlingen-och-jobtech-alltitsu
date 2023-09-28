@@ -49,7 +49,7 @@ export const ContactForm = ({ setEmailSent }: IProps) => {
         setUsernameError(true);
       }
     } else if (field === 'email') {
-      if (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email)) {
+      if (/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email)) {
         setEmailError(false);
       } else {
         setEmailError(true);
@@ -70,7 +70,6 @@ export const ContactForm = ({ setEmailSent }: IProps) => {
       return;
     } else if (!usernameError && !emailError && !messageError) {
       await submitForm(formData);
-      console.log('mejl skickat');
       setEmailSent(true);
     } else {
       return;
@@ -161,7 +160,6 @@ export const ContactForm = ({ setEmailSent }: IProps) => {
             afSize={ButtonSize.MEDIUM}
             afVariation={ButtonVariation.PRIMARY}
             afFullWidth={false}
-            className="alltitsuStyling"
             id="contact-btn"
             onAfOnClick={handleSubmit}
           >
