@@ -9,6 +9,7 @@ Arbetet gjordes som ett grupparbete och vår grupp bestod av @arnetzlinder, @tit
 ## Starta projekt
 Klona repot \
 npm i \
+kommentera ut "base" i vite.config.ts \
 npm run dev
 
 ## Tech stack
