@@ -1,0 +1,57 @@
+@import './colorvariables.scss';
+@import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/digi-arbetsformedlingen.css';
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  color: $DarkColor;
+  max-width: 500px;
+  .formField {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem 0;
+    input {
+      width: 20rem;
+      box-shadow: 1px 1px $DarkColor;
+      background-color: $FirstColor;
+      border: 1px solid $DarkColor;
+      margin: 1.5rem;
+    }
+    label {
+      margin-left: 1rem;
+    }
+  }
+
+  .searchButtonDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .searchButton {
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 3rem;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .searchForm {
+    max-width: 800px;
+  }
+  .laptopView {
+    display: flex;
+  }
+
+  #thirdInput {
+    width: 100%;
+    display: block;
+    margin-top: 1rem;
+  }
+}

@@ -1,0 +1,24 @@
+@import './colorvariables.scss';
+.jobCardResponse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.noResponse {
+    display: flex;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 2rem;
+    padding: 2rem;
+    max-width: 30rem;
+    background-color: $SecondColor;
+    color: $DarkColor;
+}
+
+.totalHits {
+    color: $DarkColor;
+}

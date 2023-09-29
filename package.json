@@ -1,17 +1,27 @@
 {
   "name": "fed22d-af-case-template",
-  "private": true,
+  "home": "https://medieinstitutet.github.io/case-f-r-arbetsf-rmedlingen-och-jobtech-alltitsu/",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --write src/"
   },
   "dependencies": {
+    "@digi/arbetsformedlingen": "^20.0.5-beta.0",
+    "@digi/arbetsformedlingen-react": "^20.0.5-beta.0",
+    "axios": "^1.5.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0",
+    "sass": "^1.67.0",
+    "styled-components": "^6.0.8"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
@@ -22,6 +32,8 @@
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "gh-pages": "^6.0.0",
+    "prettier": "^3.0.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   }
