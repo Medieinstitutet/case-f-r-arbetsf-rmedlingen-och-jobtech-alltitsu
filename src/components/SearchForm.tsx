@@ -50,7 +50,7 @@ export function SearchForm({ handleSubmit, toDate, fromDate }: ISearchFormProps)
         </div>
         <div className="formField" id="thirdInput">
           <DigiFormInput
-            afLabel="Företag:"
+            afLabel="Arbetsgivare:"
             afVariation={FormInputVariation.MEDIUM}
             afType={FormInputType.TEXT}
             afValidation={FormInputValidation.NEUTRAL}

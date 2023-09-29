@@ -49,7 +49,7 @@ export const ContactForm = ({ setEmailSent }: IProps) => {
         setUsernameError(true);
       }
     } else if (field === 'email') {
-      if (/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email)) {
+      if (/^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/.test(formData.email)) {
         setEmailError(false);
       } else {
         setEmailError(true);
@@ -85,76 +85,40 @@ export const ContactForm = ({ setEmailSent }: IProps) => {
   return (
     <ContactWrapper>
       <form>
-        {!usernameError ? (
-          <DigiFormInput
-            afLabel="Namn:"
-            afVariation={FormInputVariation.MEDIUM}
-            afType={FormInputType.TEXT}
-            afValidation={FormInputValidation.NEUTRAL}
-            afName="username"
-            afValue={formData.username}
-            onAfOnInput={handleInput}
-            onAfOnFocusout={() => validateForm('username')}
-          ></DigiFormInput>
-        ) : (
-          <DigiFormInput
-            afLabel="Namn:"
-            afVariation={FormInputVariation.MEDIUM}
-            afType={FormInputType.TEXT}
-            afValidation={FormInputValidation.ERROR}
-            afValidationText="Endast bokstäver"
-            afValue={formData.username}
-            afName="username"
-            onAfOnInput={handleInput}
-            onAfOnFocusout={() => validateForm('username')}
-          ></DigiFormInput>
-        )}
-        {!emailError ? (
-          <DigiFormInput
-            afLabel="Email:"
-            afVariation={FormInputVariation.MEDIUM}
-            afType={FormInputType.EMAIL}
-            afValidation={FormInputValidation.NEUTRAL}
-            afName="email"
-            afValue={formData.email}
-            onAfOnInput={handleInput}
-            onAfOnFocusout={() => validateForm('email')}
-          ></DigiFormInput>
-        ) : (
-          <DigiFormInput
-            afLabel="Email:"
-            afVariation={FormInputVariation.MEDIUM}
-            afType={FormInputType.TEXT}
-            afValidation={FormInputValidation.ERROR}
-            afValidationText="Stämmer adressen?"
-            afValue={formData.email}
-            afName="email"
-            onAfOnInput={handleInput}
-            onAfOnFocusout={() => validateForm('email')}
-          ></DigiFormInput>
-        )}
-        {!messageError ? (
-          <DigiFormTextarea
-            afLabel="Meddelande:"
-            afVariation={FormTextareaVariation.MEDIUM}
-            afValidation={FormTextareaValidation.NEUTRAL}
-            afName="message"
-            afValue={formData.message}
-            onAfOnInput={handleInput}
-            onAfOnFocusout={() => validateForm('message')}
-          ></DigiFormTextarea>
-        ) : (
-          <DigiFormTextarea
-            afLabel="Meddelande:"
-            afVariation={FormTextareaVariation.MEDIUM}
-            afValidation={FormTextareaValidation.ERROR}
-            afValidationText="Fyll i ett meddelande"
-            afName="message"
-            afValue={formData.message}
-            onAfOnInput={handleInput}
-            onAfOnFocusout={() => validateForm('message')}
-          ></DigiFormTextarea>
-        )}
+        <DigiFormInput
+          afLabel="Namn:"
+          afVariation={FormInputVariation.MEDIUM}
+          afType={FormInputType.TEXT}
+          afName="username"
+          afValidation={usernameError ? FormInputValidation.ERROR : FormInputValidation.NEUTRAL}
+          afValidationText={usernameError ? 'Endast bokstäver' : ''}
+          afValue={formData.username}
+          onAfOnInput={handleInput}
+          onAfOnFocusout={() => validateForm('username')}
+        ></DigiFormInput>
+        <DigiFormInput
+          afLabel="Email:"
+          afVariation={FormInputVariation.MEDIUM}
+          afType={FormInputType.EMAIL}
+          afValidation={emailError ? FormInputValidation.ERROR : FormInputValidation.NEUTRAL}
+          afValidationText={emailError ? 'Stämmer adressen?' : ''}
+          afName="email"
+          afValue={formData.email}
+          onAfOnInput={handleInput}
+          onAfOnFocusout={() => validateForm('email')}
+        ></DigiFormInput>
+        <DigiFormTextarea
+          afLabel="Meddelande:"
+          afVariation={FormTextareaVariation.MEDIUM}
+          afValidation={
+            messageError ? FormTextareaValidation.ERROR : FormTextareaValidation.NEUTRAL
+          }
+          afValidationText={messageError ? 'Fyll i ett meddelande' : ''}
+          afName="message"
+          afValue={formData.message}
+          onAfOnInput={handleInput}
+          onAfOnFocusout={() => validateForm('message')}
+        ></DigiFormTextarea>
         <div className="contact-btn">
           <DigiButton
             afSize={ButtonSize.MEDIUM}
